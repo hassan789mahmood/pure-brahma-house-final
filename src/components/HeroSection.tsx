@@ -240,7 +240,7 @@ export const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 border-t border-border/50 py-4 glass z-10 overflow-hidden">
         <div className="flex whitespace-nowrap marquee">
           {[...marquee, ...marquee, ...marquee, ...marquee].map((item, i) => (
-            <span key={i} className="mx-8 mono text-xs uppercase tracking-wider text-muted-foreground/60 flex items-center gap-3">
+            <span key={i} className="mx-8 mono text-xs uppercase tracking-wider text-foreground flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
               {item}
             </span>
