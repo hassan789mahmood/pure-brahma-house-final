@@ -144,12 +144,12 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Headline */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <motion.h1
                 initial={{ y: 60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
+                className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight whitespace-nowrap"
               >
                 Pure Brahma House
               </motion.h1>
@@ -165,7 +165,7 @@ export const HeroSection = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -30, opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
+                  className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
                 >
                   {rotatingWords[wordIdx]}
                 </motion.span>
