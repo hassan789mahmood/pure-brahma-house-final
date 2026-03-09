@@ -165,7 +165,7 @@ export const HeroSection = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -30, opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="font-display text-43xl sm:text-4xl md:text-5l font-bold leading-[1.1] tracking-tight text-neon text-glow"
+                  className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
                 >
                   {rotatingWords[wordIdx]}
                 </motion.span>
