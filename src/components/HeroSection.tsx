@@ -190,7 +190,7 @@ export const HeroSection = () => {
               </p>
               <p className="text-sm text-primary/80 font-medium flex items-center gap-2">
                 <Zap className="w-3.5 h-3.5" />
-                Limited batches produced to maintain exceptional genetics, health, and quality. Available on advance booking only.
+                Limited batches produced to maintain exceptional genetics, health, and quality.
               </p>
             </motion.div>
 
