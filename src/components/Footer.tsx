@@ -35,7 +35,7 @@ export const Footer = () => {
                 </svg>
               </div>
               <span className="font-display text-lg font-semibold tracking-tight">
-                Pure<span className="text-primary">Brahma</span>
+                Pure<span className="text-primary">Brahma</span>House
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">

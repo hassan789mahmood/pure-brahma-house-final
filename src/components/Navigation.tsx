@@ -45,7 +45,7 @@ export const Navigation = () => {
             </div>
             <div className="hidden sm:block">
               <span className="font-display text-lg font-semibold tracking-tight">
-                Pure<span className="text-primary">Brahma</span>
+                Pure<span className="text-primary">Brahma</span>House
               </span>
             </div>
           </motion.a>
