@@ -74,7 +74,8 @@ export const TestimonialsSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="font-display text-2xl md:text-3xxl md:text-2xl leading-[1.4] mb-8 font-semi        >
+                  className="font-display text-xl md:text-2xl leading-[1.4] mb-8 font-semibold"
+                >
                   "{testimonials[active].content}"
                 </motion.p>
               </AnimatePresence>
