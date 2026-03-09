@@ -188,7 +188,6 @@ export const HeroSection = () => {
               <p className="text-base md:text-lg text-foreground leading-relaxed">
                 We offer carefully bred, high-quality chicks and fertile eggs, available only on advance booking.
               </p>
-              </p>
               <p className="text-sm text-primary/80 font-medium flex items-center gap-2">
                 <Zap className="w-3.5 h-3.5" />
                 Limited batches produced to maintain exceptional genetics, health, and quality.
