@@ -127,7 +127,7 @@ export const Navigation = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="btn-neon rounded-full px-10 py-4 mt-10 text-primary-foreground font-semibold"
+              className="btn-neon rounded-full px-10 py-4 mt-10 text-primary-foreground font-semibold whitespace-nowrap"
             >
               Book Now
             </motion.a>
