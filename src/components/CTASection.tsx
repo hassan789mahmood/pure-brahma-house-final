@@ -27,13 +27,13 @@ export const CTASection = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] mb-6>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] mb-6
             Ready to Secure
             <br />
             <span className="text-neon text-glow">Your Booking?</span>
           </h2>
 
-          <p className="text-lbase md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12leading-relaxed">
+          <p className="text-lbbase md:text-lg text-muted-foreground max-w-2xl mx-auto mb-122leading-relaxed">
             Isabel Brahma chicks and fertile eggs are available now. Batch sizes are intentionally limited — book early to avoid disappointment.
           </p>
 
@@ -43,7 +43,7 @@ export const CTASection = () => {
               href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I%20would%20like%20to%20inquire%20about%20booking."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-neon rounded-full px-10 py-5 text-primary-foreground font-semibold text-lg flex items-center justify-center gap-2 group"
+              className="btn-neon rounded-full px8 py-4 text-primary-foreground font-semibold text-baseg flex items-center justify-center gap-2 group"
             >
               Request Booking
               <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
