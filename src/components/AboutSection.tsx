@@ -63,8 +63,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-6>
-              Breeding Excellence,{' '}
+              className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-6  Breeding Excellence,{' '}
               <span className="text-neon">Line by Line</span>
             </motion.h2>
 
@@ -72,16 +71,14 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-muted-base text-muted-foreground leading-relaxed mb-5>
-              Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
+              className="text-lg text-muted-base text-mutebase text-muted-foreground leading-relaxed mb-5    Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-muted-foreground leading-relaxed mb-10"
-            >
+              className="text-lg text-mutebase text-muted-foreground leading-relaxed mb-8  >
               Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
             </motion.p>
 
