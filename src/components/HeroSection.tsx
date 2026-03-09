@@ -127,7 +127,7 @@ export const HeroSection = () => {
 
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10 container mx-auto px-6 lg:px-12 pt-32 pb-20">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-3xl space-y-10">
           {/* Left content */}
           <div className="lg:col-span-7 space-y-10">
             {/* Badge */}
