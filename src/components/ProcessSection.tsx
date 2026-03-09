@@ -64,7 +64,7 @@ export const ProcessSection = () => {
                 {/* Content */}
                 <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <h3 className="font-display text-xl md:text-2xllg md:text-roup-hover:text-neon transition-colors">
+                    <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-neon transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mt-1">{step.desc}</p>

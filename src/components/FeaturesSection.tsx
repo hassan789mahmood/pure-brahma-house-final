@@ -60,10 +60,10 @@ export const FeaturesSection = () => {
                 <f.icon className="w-6 h-6 text-primary" />
               </div>
 
-              <h3 className="font-display text-2xl font-bold xl font-bold mxl font-bold mb-3tion-colors">
+              <h3 className="font-display text-xl font-bold mb-3 group-hover:text-neon transition-colors">
                 {f.title}
               </h3>
-              <p className="text-muted-foregrounsm text-d leading-relaxed">{f.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
 
               {/* Bottom accent */}
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/50 transition-all duration-700" />
