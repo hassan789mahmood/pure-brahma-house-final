@@ -1,152 +1,151 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 const stats = [
-  { value: 4, suffix: '+', label: 'Premium Varieties' },
-  { value: 100, suffix: '%', label: 'Selective Breeding' },
-  { value: 2, suffix: '', label: 'Lines Now Available' },
-  { value: 0, prefix: 'PKR', suffix: '', label: 'Direct Breeder Pricing' },
+  { value: 4, suffix: '+', label: 'Premium Varieties', mono: true },
+  { value: 100, suffix: '%', label: 'Selective Breeding', mono: true },
+  { value: 2, suffix: '', label: 'Lines Available', mono: true },
+  { prefix: 'PKR', value: 0, suffix: '', label: 'Direct Pricing', mono: true },
 ];
 
-const AnimatedCounter = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
+const CountUp = ({ value, prefix = '', suffix = '', inView }: { value: number; prefix?: string; suffix?: string; inView: boolean }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (!isInView) return;
-    if (value === 0) {
-      setCount(0);
-      return;
-    }
-    
+    if (!inView || value === 0) return;
+    let start = 0;
     const duration = 2000;
-    const steps = 60;
-    const increment = value / steps;
-    let current = 0;
-    
+    const step = Math.ceil(value / (duration / 16));
     const timer = setInterval(() => {
-      current += increment;
-      if (current >= value) {
+      start += step;
+      if (start >= value) {
         setCount(value);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(current));
+        setCount(start);
       }
-    }, duration / steps);
-
+    }, 16);
     return () => clearInterval(timer);
-  }, [isInView, value]);
+  }, [inView, value]);
 
   return (
-    <span ref={ref} className="font-serif text-5xl md:text-6xl text-gradient-gold font-medium">
-      {prefix}{count}{suffix}
+    <span className="font-mono text-5xl md:text-6xl font-bold text-gold-gradient">
+      {prefix}{value === 0 ? 'PKR' : count}{suffix}
     </span>
   );
 };
 
 export const AboutSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-15%' });
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  };
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-32 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
-      <div className="absolute top-1/2 left-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
+    <section id="about" ref={ref} className="relative py-32 lg:py-40 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-surface-1 to-background" />
+        <div className="absolute top-0 left-0 right-0 gradient-line" />
+      </div>
 
-      <div className="container mx-auto px-6 relative">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <span className="text-primary text-sm uppercase tracking-widest mb-4 block">About Us</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
-            Breeding Excellence,
-            <br />
-            <span className="text-gradient-gold italic">Line by Line</span>
-          </h2>
-          <div className="section-divider mb-8" />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        className="container mx-auto px-6 lg:px-12 relative"
+      >
+        {/* Section label */}
+        <motion.div variants={itemVariants} className="flex items-center gap-4 mb-16">
+          <div className="w-12 h-px bg-primary" />
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary">001 / About</span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+          {/* Left - Large text */}
+          <div>
+            <motion.h2
+              variants={itemVariants}
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8"
+            >
+              Breeding
+              <br />
+              Excellence,{' '}
+              <span className="text-gold-gradient italic">
+                Line by Line
+              </span>
+            </motion.h2>
+
+            <motion.p variants={itemVariants} className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
+            </motion.p>
+            <motion.p variants={itemVariants} className="text-lg text-muted-foreground leading-relaxed mb-10">
+              Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
+            </motion.p>
+
+            <motion.a
+              variants={itemVariants}
+              href="#products"
+              className="inline-flex items-center gap-3 text-primary font-medium group"
+            >
+              <span className="reveal-line">Our Story & Standards</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+            </motion.a>
+          </div>
+
+          {/* Right - Image + floating elements */}
+          <motion.div variants={itemVariants} className="relative">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] border border-border/30">
               <img
                 src="https://www.purebrahmahouse.com/images/brahma-hen.png"
-                alt="Isabel Brahma Hen"
+                alt="Isabel Brahma Hen - Pure Brahma House"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
             </div>
-            
-            {/* Floating Card */}
+
+            {/* Floating quote */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute -bottom-8 -right-8 glass rounded-2xl p-6 max-w-xs"
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="absolute -bottom-6 -left-6 glass-card rounded-2xl p-6 max-w-[280px]"
             >
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="w-8 h-px bg-primary mb-4" />
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
                 "Every chick, every fertile egg is the result of deliberate, selective pairing."
               </p>
             </motion.div>
-
-            {/* Decorative Border */}
-            <div className="absolute -inset-4 border border-primary/20 rounded-3xl -z-10" />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-              Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
-            </p>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-8">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
-                  className="text-center p-6 glass rounded-xl"
-                >
-                  <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                  <p className="text-sm text-muted-foreground mt-2">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.a
-              href="#products"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              className="inline-flex items-center gap-2 mt-10 text-primary underline-animate font-medium"
-            >
-              Our Story & Standards
-              <span>→</span>
-            </motion.a>
           </motion.div>
         </div>
-      </div>
+
+        {/* Stats */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-24"
+        >
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className="glass-card rounded-2xl p-8 text-center hover-lift group"
+            >
+              <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} inView={isInView} />
+              <div className="w-8 h-px bg-primary/30 mx-auto my-4 group-hover:w-16 transition-all duration-500" />
+              <p className="text-sm text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
