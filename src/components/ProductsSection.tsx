@@ -142,16 +142,6 @@ export const ProductsSection = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Navigation buttons */}
-          <div className="flex gap-2 absolute -top-14 right-0 z-10">
-            <button onClick={scrollPrev} disabled={!canScrollPrev} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button onClick={scrollNext} disabled={!canScrollNext} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-5">
               {waitlist.map((item, i) => (
@@ -180,6 +170,16 @@ export const ProductsSection = () => {
                 </motion.a>
               ))}
             </div>
+          </div>
+
+          {/* Navigation buttons */}
+          <div className="flex justify-center gap-3 mt-8">
+            <button onClick={scrollPrev} disabled={!canScrollPrev} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button onClick={scrollNext} disabled={!canScrollNext} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>
