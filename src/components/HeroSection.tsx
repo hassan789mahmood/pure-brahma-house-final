@@ -179,9 +179,9 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-base md:text-lg text-foreground max-w-lg leading-relaxed"
             >
-              Premium Brahma Breeds – Limited Availability<br /><br />
-              Specializing in Isabel, Light Columbian, Blue Columbian, BSO, and Dark Brahma.<br /><br />
-              We offer carefully bred, high-quality chicks and fertile eggs, available only on advance booking.<br /><br />
+              Premium Brahma Breeds – Limited Availability<br />
+              Specializing in Isabel, Light Columbian, Blue Columbian, BSO, and Dark Brahma.<br />
+              We offer carefully bred, high-quality chicks and fertile eggs, available only on advance booking.<br />
               ⚡ Limited batches produced to maintain exceptional genetics, health, and quality.
             </motion.p>
 
