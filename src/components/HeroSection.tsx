@@ -151,7 +151,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight whitespace-nowrap"
               >
-                Pure Brahma House
+                Pure <span className="text-primary">Brahma</span> House
               </motion.h1>
               <motion.div
                 initial={{ y: 60, opacity: 0 }}
