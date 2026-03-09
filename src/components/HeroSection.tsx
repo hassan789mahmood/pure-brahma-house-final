@@ -173,17 +173,26 @@ export const HeroSection = () => {
             </div>
 
             {/* Description */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-base md:text-lg text-foreground max-w-lg leading-relaxed"
+              className="max-w-lg space-y-3"
             >
-              Premium Brahma Breeds – Limited Availability<br />
-              Specializing in Isabel, Light Columbian, Blue Columbian, BSO, and Dark Brahma.<br />
-              We offer carefully bred, high-quality chicks and fertile eggs, available only on advance booking.<br />
-              ⚡ Limited batches produced to maintain exceptional genetics, health, and quality.
-            </motion.p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                Premium Brahma Breeds – Limited Availability
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Specializing in <span className="text-foreground font-medium">Isabel</span>, <span className="text-foreground font-medium">Light Columbian</span>, <span className="text-foreground font-medium">Blue Columbian</span>, <span className="text-foreground font-medium">BSO</span>, and <span className="text-foreground font-medium">Dark Brahma</span>.
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                We offer carefully bred, high-quality chicks and fertile eggs, available only on advance booking.
+              </p>
+              <p className="text-sm text-primary/80 font-medium flex items-center gap-2">
+                <Zap className="w-3.5 h-3.5" />
+                Limited batches produced to maintain exceptional genetics, health, and quality.
+              </p>
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
