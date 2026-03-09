@@ -82,7 +82,7 @@ export const Footer = () => {
               <li>
                 <a href="https://wa.me/923454489123" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>+92 345 4489123</span>
+                  <span>0345 4489123</span>
                 </a>
               </li>
             </ul>
