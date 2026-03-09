@@ -138,7 +138,7 @@ export const HeroSection = () => {
               className="inline-flex items-center gap-3 glass-light rounded-full px-5 py-2.5"
             >
               <Zap className="w-4 h-4 text-primary" />
-              <span className="mono text-xs uppercase tracking-widest text-foreground">
+              <span className="mono text-xs uppercase tracking-widest text-primary">
                 Pakistan's Premium Brahma Breeders
               </span>
             </motion.div>
