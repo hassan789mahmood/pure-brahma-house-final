@@ -27,7 +27,7 @@ export const CTASection = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="font-display text-5xl md:text-6xl lg:text-8xl font-black leading-[0.95] mb-8">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] mb-6">
             Ready to Secure
             <br />
             <span className="text-neon text-glow">Your Booking?</span>
