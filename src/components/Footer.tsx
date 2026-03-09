@@ -33,7 +33,7 @@ export const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Pakistan's premium Brahma breeders. Specializing in Isabel Brahma lines with selective breeding standards.
+              Pakistan's premium Brahma breeders. Specializing in Isabel, Light Columbian, Blue Columbian, BSO, and Dark Brahma.
             </p>
             <a
               href="https://wa.me/923454489123"
