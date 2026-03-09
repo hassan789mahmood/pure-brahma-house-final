@@ -40,7 +40,7 @@ export const ProductsSection = () => {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-primary" />
-          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">002 / Lines</span>
+          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">LINES</span>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-20">
