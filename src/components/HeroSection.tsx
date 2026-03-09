@@ -192,6 +192,10 @@ export const HeroSection = () => {
                 <Zap className="w-3.5 h-3.5" />
                 Limited batches to maintain exceptional quality.
               </p>
+              <p className="text-sm text-primary/80 font-medium flex items-center gap-2">
+                <Zap className="w-3.5 h-3.5" />
+                Available only on advance booking.
+              </p>
             </motion.div>
 
             {/* CTAs */}
