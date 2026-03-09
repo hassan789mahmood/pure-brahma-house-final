@@ -4,7 +4,7 @@ import { ArrowUpRight, ChevronDown, Zap } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const rotatingWords = ['Genetics', 'Standards', 'Quality', 'Excellence'];
-const marquee = ['Selective Breeding', 'Limited Production', 'Premium Lines', 'Professional Support', 'Garden Town, Lahore', 'Isabel Brahma', 'Advance Booking'];
+const marquee = ['Selective Breeding', 'Limited Production', 'Premium Lines', 'Professional Support', 'Advance Booking'];
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
