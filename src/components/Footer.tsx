@@ -74,7 +74,7 @@ export const Footer = () => {
             <h4 className="font-display font-bold mb-6">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://maps.google.com/?q=Abu+Bakar+Block+New+Garden+Town+Lahore" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.google.com/maps/search/Abu+Bakar+Block,+New+Garden+Town,+Lahore" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <span>Garden Town, Lahore, Pakistan</span>
                 </a>
