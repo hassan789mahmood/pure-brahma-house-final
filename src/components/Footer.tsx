@@ -17,9 +17,9 @@ export const Footer = () => {
       <div className="absolute top-0 left-0 right-0 line-h" />
 
       <div className="container mx-auto px-6 lg:px-12 relative">
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-16 place-items-start md:justify-items-center">
           {/* Brand */}
-          <div>
+          <div className="md:justify-self-start">
             <a href="#home" className="inline-flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                 <svg className="w-6 h-6 text-primary-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -40,7 +40,7 @@ export const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-display font-bold mb-6">Quick Links</h4>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+            <ul className="space-y-3">
               {links['Quick Links'].map((item) => (
                 <li key={item.name}>
                   <a href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors underline-reveal">
