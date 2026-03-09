@@ -62,7 +62,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
               >
-                Pure Brahma
+                Pure Brahma House
               </motion.h1>
               <motion.div
                 initial={{ y: 60, opacity: 0 }}
