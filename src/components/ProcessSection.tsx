@@ -35,8 +35,7 @@ export const ProcessSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-16 max-w-3xl"
-        >
+          className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-16      >
           How Booking <span className="text-neon">Works</span>
         </motion.h2>
 
@@ -64,7 +63,7 @@ export const ProcessSection = () => {
                 {/* Content */}
                 <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <h3 className="font-display text-xl md:text-2xl font-bold group-hover:text-neon transition-colors">
+                    <h3 className="font-display text-xl md:text-2xllg md:text-roup-hover:text-neon transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mt-1">{step.desc}</p>

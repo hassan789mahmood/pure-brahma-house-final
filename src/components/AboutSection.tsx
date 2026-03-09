@@ -29,7 +29,7 @@ const Counter = ({ value, prefix = '', suffix = '', display, inView }: { value: 
   }, [inView, value]);
 
   return (
-    <span className="mono text-4xl md:text-5xl font-bold text-neon">
+    <span className="mono text-3xl md:text-4xl font-bold text-neon">
       {prefix}{display || count}{suffix}
     </span>
   );
@@ -63,7 +63,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-6  Breeding Excellence,{' '}
+              className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-6ellence,{' '}
               <span className="text-neon">Line by Line</span>
             </motion.h2>
 
@@ -71,15 +71,14 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-muted-base text-mutebase text-muted-foreground leading-relaxed mb-5    Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
+              className="text-lg text-muted-base text-mutebase text-mutebase text-muted-foreground leading-relaxed mb-5hma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-mutebase text-muted-foreground leading-relaxed mb-8  >
-              Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
+              className="text-lg text-mutebase text-mubase text-muted-foreground leading-relaxed mb-8       Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
             </motion.p>
 
             <motion.a
