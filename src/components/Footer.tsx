@@ -8,13 +8,6 @@ const links = {
     { name: 'Our Lines', href: '#products' },
     { name: 'Standards', href: '#features' },
   ],
-  'Products': [
-    { name: 'Isabel Brahma', href: '#products' },
-    { name: 'Light Columbian Brahma', href: '#products' },
-    { name: 'Blue Columbian Brahma', href: '#products' },
-    { name: 'BSO Brahma', href: '#products' },
-    { name: 'Dark Brahma', href: '#products' },
-  ],
 };
 
 export const Footer = () => {
