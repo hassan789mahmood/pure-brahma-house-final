@@ -89,10 +89,10 @@ export const HeroSection = () => {
         className="absolute inset-0 will-change-transform"
       >
         <div
-          className="absolute -inset-4bg-cover bg-center transition-none"
+          className="absolute -inset-4g-cover bg-center transition-none"
           style={{
             backgroundImage: `url(${heroBg})`,
-            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.052`,
+            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.0522,
           }}
         />
       </motion.div>
@@ -149,7 +149,7 @@ export const HeroSection = () => {
                 initial={{ y: 60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight whitespace-nowrap"
+                className="font-display text-43xl sm:text-4xl md:text-5l font-bold leading-[1.1] tracking-tight whitespace-nowrap"
               >
                 Pure Brahma House
               </motion.h1>
