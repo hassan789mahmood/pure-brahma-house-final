@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ArrowUpRight, Clock, Radio } from 'lucide-react';
+import { useRef, useCallback, useEffect, useState } from 'react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Clock, Radio } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const available = [
   {
@@ -26,6 +27,23 @@ const waitlist = [
 export const ProductsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', slidesToScroll: 1 });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+    emblaApi.on('select', onSelect);
+    onSelect();
+    return () => { emblaApi.off('select', onSelect); };
+  }, [emblaApi]);
 
   return (
     <section id="products" ref={ref} className="relative py-32 lg:py-40 overflow-hidden">
@@ -123,32 +141,46 @@ export const ProductsSection = () => {
           <span className="mono text-xs uppercase tracking-[0.15em] text-muted-foreground">Currently Out of Stock — Join Waitlist</span>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {waitlist.map((item, i) => (
-            <motion.a
-              key={item.title}
-              href="#contact"
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 + i * 0.08 }}
-              className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block"
-            >
-              <div className="relative aspect-square overflow-hidden">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-                <div className="absolute top-3 left-3">
-                  <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
-                </div>
-              </div>
-              <div className="p-5">
-                <h4 className="font-display font-bold mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
-                <p className="text-xs text-muted-foreground line-clamp-2">{item.desc}</p>
-                <span className="inline-flex items-center gap-1 mono text-xs text-primary mt-3">
-                  Join Waitlist <ArrowUpRight className="w-3 h-3" />
-                </span>
-              </div>
-            </motion.a>
-          ))}
+        <div className="relative">
+          {/* Navigation buttons */}
+          <div className="flex gap-2 absolute -top-14 right-0 z-10">
+            <button onClick={scrollPrev} disabled={!canScrollPrev} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button onClick={scrollNext} disabled={!canScrollNext} className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary/50 hover:text-primary transition-colors disabled:opacity-30">
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-5">
+              {waitlist.map((item, i) => (
+                <motion.a
+                  key={item.title}
+                  href="#contact"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.5 + i * 0.08 }}
+                  className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block flex-[0_0_calc(25%-15px)] min-w-0 max-sm:flex-[0_0_80%] max-lg:flex-[0_0_calc(50%-10px)]"
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h4 className="font-display font-bold mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
+                    <p className="text-xs text-muted-foreground line-clamp-2">{item.desc}</p>
+                    <span className="inline-flex items-center gap-1 mono text-xs text-primary mt-3">
+                      Join Waitlist <ArrowUpRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
