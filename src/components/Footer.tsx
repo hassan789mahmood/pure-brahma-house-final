@@ -17,9 +17,9 @@ export const Footer = () => {
       <div className="absolute top-0 left-0 right-0 line-h" />
 
       <div className="container mx-auto px-6 lg:px-12 relative">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <a href="#home" className="inline-flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                 <svg className="w-6 h-6 text-primary-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -47,26 +47,24 @@ export const Footer = () => {
             </a>
           </div>
 
-          {/* Links */}
-          {Object.entries(links).map(([category, items]) => (
-            <div key={category}>
-              <h4 className="font-display font-bold mb-6">{category}</h4>
-              <ul className="space-y-3">
-                {items.map((item) => (
-                  <li key={item.name}>
-                    <a href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors underline-reveal">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-display font-bold mb-6">Quick Links</h4>
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+              {links['Quick Links'].map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors underline-reveal">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Contact */}
           <div>
             <h4 className="font-display font-bold mb-6">Contact</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 mb-6">
               <li>
                 <a href="https://www.google.com/maps/search/Abu+Bakar+Block,+New+Garden+Town,+Lahore" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -80,7 +78,7 @@ export const Footer = () => {
                 </a>
               </li>
             </ul>
-            <a href="#contact" className="inline-flex items-center gap-2 btn-outline rounded-full px-6 py-3 text-sm text-primary font-medium mt-6">
+            <a href="#contact" className="inline-flex items-center gap-2 btn-outline rounded-full px-6 py-3 text-sm text-primary font-medium">
               Book Now <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
