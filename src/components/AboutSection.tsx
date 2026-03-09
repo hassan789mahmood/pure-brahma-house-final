@@ -53,7 +53,7 @@ export const AboutSection = () => {
           className="flex items-center gap-4 mb-16"
         >
           <div className="w-12 h-px bg-primary" />
-          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">001 / About</span>
+          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">ABOUT</span>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-start">
