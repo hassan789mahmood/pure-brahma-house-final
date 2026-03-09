@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Space Grotesk', 'sans-serif'],
-        display: ['Syne', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Outfit', 'sans-serif'],
+        display: ['Archivo', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,15 +52,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          muted: "hsl(var(--gold-muted))",
-          glow: "hsl(var(--gold-glow))",
-        },
-        surface: {
-          1: "hsl(var(--surface-1))",
-          2: "hsl(var(--surface-2))",
-          3: "hsl(var(--surface-3))",
+        neon: {
+          DEFAULT: "hsl(var(--neon))",
+          glow: "hsl(var(--neon-glow))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
