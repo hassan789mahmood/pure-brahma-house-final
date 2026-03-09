@@ -35,7 +35,7 @@ export const FeaturesSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-20 max-w-3xl"
+          className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-16 max-w-3xl"
         >
           Standards That Set Us <span className="text-neon">Apart</span>
         </motion.h2>
@@ -60,10 +60,10 @@ export const FeaturesSection = () => {
                 <f.icon className="w-6 h-6 text-primary" />
               </div>
 
-              <h3 className="font-display text-2xl font-bold mb-4 group-hover:text-neon transition-colors">
+              <h3 className="font-display text-xl font-bold mb-3 group-hover:text-neon transition-colors">
                 {f.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
 
               {/* Bottom accent */}
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/50 transition-all duration-700" />

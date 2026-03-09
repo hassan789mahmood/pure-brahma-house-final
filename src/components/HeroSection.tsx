@@ -89,10 +89,10 @@ export const HeroSection = () => {
         className="absolute inset-0 will-change-transform"
       >
         <div
-          className="absolute -inset-20 bg-cover bg-center transition-none"
+          className="absolute -inset-10 bg-cover bg-center transition-none"
           style={{
             backgroundImage: `url(${heroBg})`,
-            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.15)`,
+            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.05)`,
           }}
         />
       </motion.div>
@@ -144,12 +144,12 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Headline */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <motion.h1
                 initial={{ y: 60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
+                className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight whitespace-nowrap"
               >
                 Pure Brahma House
               </motion.h1>
@@ -165,7 +165,7 @@ export const HeroSection = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -30, opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
+                  className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
                 >
                   {rotatingWords[wordIdx]}
                 </motion.span>
@@ -177,7 +177,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
             >
               Specializing in Isabel Brahma lines. Premium chicks and fertile eggs available on advance booking. Limited batches only.
             </motion.p>

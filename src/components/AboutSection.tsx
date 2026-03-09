@@ -29,7 +29,7 @@ const Counter = ({ value, prefix = '', suffix = '', display, inView }: { value: 
   }, [inView, value]);
 
   return (
-    <span className="mono text-4xl md:text-5xl font-bold text-neon">
+    <span className="mono text-3xl md:text-4xl font-bold text-neon">
       {prefix}{display || count}{suffix}
     </span>
   );
@@ -63,7 +63,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-8"
+              className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-6"
             >
               Breeding Excellence,{' '}
               <span className="text-neon">Line by Line</span>
@@ -73,7 +73,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-muted-foreground leading-relaxed mb-6"
+              className="text-base text-muted-foreground leading-relaxed mb-5"
             >
               Pure Brahma House operates on a philosophy of precision. We do not produce in excess — every chick, every fertile egg is the result of deliberate, selective pairing designed for structural integrity and true-to-type color standards.
             </motion.p>
@@ -82,7 +82,7 @@ export const AboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-muted-foreground leading-relaxed mb-10"
+              className="text-base text-muted-foreground leading-relaxed mb-8"
             >
               Based in Garden Town, Lahore, we serve serious breeders across Pakistan who value quality over quantity. Our communication is transparent, our process is structured, and our commitment to the breed is unwavering.
             </motion.p>
