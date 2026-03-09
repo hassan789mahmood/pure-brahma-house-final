@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-secondary to-background" />
       <div className="absolute top-0 left-0 right-0 line-h" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative">
+      <div className="container mx-auto px-10 lg:px-20 relative">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-16 place-items-start md:justify-items-center">
           {/* Brand */}
           <div className="md:justify-self-start">
