@@ -177,7 +177,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
+              className="text-base md:text-lg text-foreground max-w-lg leading-relaxed"
             >
               Specializing in Isabel Brahma lines. Premium chicks and fertile eggs available on advance booking. Limited batches only.
             </motion.p>

@@ -56,7 +56,7 @@ export const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors underline-reveal"
+                className="px-5 py-2.5 text-sm text-foreground hover:text-primary transition-colors underline-reveal"
               >
                 {link.name}
               </a>
