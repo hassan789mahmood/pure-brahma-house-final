@@ -90,7 +90,7 @@ export const ProductsSection = () => {
 
               {/* Content */}
               <div className="p-8">
-                <h3 className="font-display text-2xl md:text-3xxl md:text-2xl font-bold mb-3ext-neon transition-colors">
+                <h3 className="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-neon transition-colors">
                   {product.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">{product.description}</p>
