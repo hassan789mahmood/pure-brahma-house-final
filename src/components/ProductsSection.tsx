@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ArrowUpRight, Clock, Radio } from 'lucide-react';
+import { useRef, useCallback, useEffect, useState } from 'react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Clock, Radio } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const available = [
   {
