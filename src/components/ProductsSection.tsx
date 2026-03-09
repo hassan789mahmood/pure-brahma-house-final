@@ -143,7 +143,7 @@ export const ProductsSection = () => {
                 <h4 className="font-display font-bold mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
                 <p className="text-xs text-muted-foreground line-clamp-2">{item.desc}</p>
                 <span className="inline-flex items-center gap-1 mono text-xs text-primary mt-3">
-                  Join <ArrowUpRight className="w-3 h-3" />
+                  Join Waitlist <ArrowUpRight className="w-3 h-3" />
                 </span>
               </div>
             </motion.a>
