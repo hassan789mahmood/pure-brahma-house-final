@@ -73,7 +73,10 @@ export const Navigation = () => {
             >
               WhatsApp
             </a>
-            <a href="#contact" className="btn-neon rounded-full px-6 py-2.5 text-sm text-primary-foreground flex items-center gap-2">
+            <a
+              href="#contact"
+              className="btn-neon rounded-full px-6 py-2.5 text-sm text-primary-foreground flex items-center gap-2 whitespace-nowrap"
+            >
               Book Now <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -124,7 +127,7 @@ export const Navigation = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="btn-neon rounded-full px-10 py-4 mt-10 text-primary-foreground font-semibold"
+              className="btn-neon rounded-full px-10 py-4 mt-10 text-primary-foreground font-semibold whitespace-nowrap"
             >
               Book Now
             </motion.a>
