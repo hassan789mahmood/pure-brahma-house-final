@@ -68,9 +68,6 @@ export const Footer = () => {
                 </a>
               </li>
             </ul>
-            <a href="#contact" className="inline-flex items-center gap-2 btn-outline rounded-full px-6 py-3 text-sm text-primary font-medium">
-              Book Now <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
 
