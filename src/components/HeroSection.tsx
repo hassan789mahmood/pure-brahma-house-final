@@ -127,9 +127,9 @@ export const HeroSection = () => {
 
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10 container mx-auto px-6 lg:px-12 pt-32 pb-20">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-3xl space-y-10">
           {/* Left content */}
-          <div className="lg:col-span-7 space-y-10">
+          <div className="space-y-10">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -206,52 +206,6 @@ export const HeroSection = () => {
               </a>
             </motion.div>
           </div>
-
-          {/* Right visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="lg:col-span-5 relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Glow background */}
-              <div className="absolute -inset-10 rounded-[3rem] bg-gradient-to-br from-primary/20 via-transparent to-accent/20 blur-3xl" />
-              
-              {/* Image container */}
-              <div className="relative rounded-3xl overflow-hidden border border-border/50 gradient-border">
-                <div className="aspect-[3/4] relative">
-                  <img
-                    src="https://www.purebrahmahouse.com/images/brahma-hen.png"
-                    alt="Isabel Brahma - Pure Brahma House"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                </div>
-              </div>
-
-              {/* Floating cards */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2 }}
-                className="absolute -left-10 top-1/4 glass rounded-2xl p-5 border border-border/50"
-              >
-                <div className="mono text-3xl font-bold text-neon mb-1">4+</div>
-                <div className="text-xs text-muted-foreground">Premium Varieties</div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.4 }}
-                className="absolute -right-10 bottom-1/3 glass rounded-2xl p-5 border border-border/50"
-              >
-                <div className="mono text-3xl font-bold text-neon mb-1">100%</div>
-                <div className="text-xs text-muted-foreground">Selective Breeding</div>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </motion.div>
 
