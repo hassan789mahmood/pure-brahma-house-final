@@ -9,10 +9,11 @@ const links = {
     { name: 'Standards', href: '#features' },
   ],
   'Products': [
-    { name: 'Isabel Brahma Chicks', href: '#products' },
-    { name: 'Isabel Brahma Eggs', href: '#products' },
-    { name: 'Light Columbian', href: '#products' },
-    { name: 'Blue Columbian', href: '#products' },
+    { name: 'Isabel Brahma', href: '#products' },
+    { name: 'Light Columbian Brahma', href: '#products' },
+    { name: 'Blue Columbian Brahma', href: '#products' },
+    { name: 'BSO Brahma', href: '#products' },
+    { name: 'Dark Brahma', href: '#products' },
   ],
 };
 
