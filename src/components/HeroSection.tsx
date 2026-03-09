@@ -191,8 +191,7 @@ export const HeroSection = () => {
               <p className="text-sm text-primary/80 font-medium">
                 Limited batches to maintain exceptional quality.
               </p>
-              <p className="text-sm text-primary/80 font-medium flex items-center gap-2">
-                <Zap className="w-3.5 h-3.5" />
+              <p className="text-sm text-primary/80 font-medium">
                 Available only on advance booking.
               </p>
             </motion.div>
