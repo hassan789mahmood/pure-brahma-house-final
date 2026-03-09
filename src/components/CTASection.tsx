@@ -43,7 +43,7 @@ export const CTASection = () => {
               href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I%20would%20like%20to%20inquire%20about%20booking."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-neon rounded-full p8 py-4 text-primary-foreground font-semibold text-baseseg flex items-center justify-center gap-2 group"
+              className="btn-neon rounded-full px-8 py-4 text-primary-foreground font-semibold text-base flex items-center justify-center gap-2 group"
             >
               Request Booking
               <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
