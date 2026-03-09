@@ -89,10 +89,10 @@ export const HeroSection = () => {
         className="absolute inset-0 will-change-transform"
       >
         <div
-          className="absolute -inset-4-cover bg-center transition-none"
+          className="absolute -inset-4 bg-cover bg-center transition-none"
           style={{
             backgroundImage: `url(${heroBg})`,
-            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.05222
+            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.02)`,
           }}
         />
       </motion.div>
