@@ -55,35 +55,32 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Headline */}
-            <div className="space-y-2">
-              <div className="overflow-hidden">
-                <motion.h1
-                  initial={{ y: 120 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1, delay: 0.3 }}
-                  className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black leading-[0.9] tracking-tight"
+            <div className="space-y-4">
+              <motion.h1
+                initial={{ y: 60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
+              >
+                Pure Brahma
+              </motion.h1>
+              <motion.div
+                initial={{ y: 60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.45 }}
+                className="flex items-center gap-4 min-h-[1.2em]"
+              >
+                <motion.span
+                  key={wordIdx}
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -30, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight text-neon text-glow"
                 >
-                  Pure Brahma
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden h-[1.1em]">
-                <motion.div
-                  initial={{ y: 120 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 1, delay: 0.45 }}
-                  className="flex items-center gap-4"
-                >
-                  <motion.span
-                    key={wordIdx}
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -50, opacity: 0 }}
-                    className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black leading-[0.9] tracking-tight text-neon text-glow"
-                  >
-                    {rotatingWords[wordIdx]}
-                  </motion.span>
-                </motion.div>
-              </div>
+                  {rotatingWords[wordIdx]}
+                </motion.span>
+              </motion.div>
             </div>
 
             {/* Description */}

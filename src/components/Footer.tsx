@@ -27,11 +27,15 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#home" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="font-display text-lg text-primary-foreground font-black">PB</span>
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <svg className="w-6 h-6 text-primary-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
               </div>
-              <span className="font-display text-xl tracking-tight">
-                Pure<span className="text-neon">Brahma</span>
+              <span className="font-display text-lg font-semibold tracking-tight">
+                Pure<span className="text-primary">Brahma</span>
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
