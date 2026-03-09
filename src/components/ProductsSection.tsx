@@ -48,7 +48,8 @@ export const ProductsSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-3xl md:text-4xl font-bold leading-[1.1
+            className="font-display text-3xl md:text-4xl font-bold leading-[1.1]"
+          >
             Available for <span className="text-neon">Booking</span>
           </motion.h2>
           <motion.p

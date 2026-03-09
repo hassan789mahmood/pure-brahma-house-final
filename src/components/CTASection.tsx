@@ -27,12 +27,13 @@ export const CTASection = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] mb-6            Ready to Secure
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] mb-6">
+            Ready to Secure
             <br />
             <span className="text-neon text-glow">Your Booking?</span>
           </h2>
 
-          <p className="text-lbbbase md:text-lg text-muted-foreground max-w-2xl mx-auto mb-1222leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             Isabel Brahma chicks and fertile eggs are available now. Batch sizes are intentionally limited — book early to avoid disappointment.
           </p>
 
