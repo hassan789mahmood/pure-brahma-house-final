@@ -1,115 +1,139 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Our Lines', href: '#products' },
-  { name: 'Why Us', href: '#features' },
+  { name: 'Lines', href: '#products' },
+  { name: 'Standards', href: '#features' },
   { name: 'Process', href: '#process' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Reviews', href: '#testimonials' },
 ];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    setIsScrolled(latest > 50);
+    setHidden(latest > previous && latest > 300);
+  });
 
   return (
     <>
-      <motion.nav
+      <motion.header
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        animate={{ y: hidden ? -100 : 0 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-dark py-4' : 'py-6'
+          isScrolled ? 'glass-surface py-3' : 'py-5'
         }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2">
-            <span className="font-serif text-2xl">
-              Pure<span className="text-gradient-gold">Brahma</span> House
-            </span>
-          </a>
+        <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+          {/* Logo */}
+          <motion.a
+            href="#home"
+            className="flex items-center gap-3 group"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+              <span className="font-display font-bold text-primary-foreground text-lg">PB</span>
+            </div>
+            <div className="hidden sm:block">
+              <span className="font-display font-semibold text-lg tracking-tight">
+                Pure<span className="text-gold-gradient">Brahma</span>
+              </span>
+            </div>
+          </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 underline-animate"
+                className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 reveal-line group"
               >
-                {link.name}
+                <span className="relative z-10">{link.name}</span>
               </a>
             ))}
-          </div>
+          </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House"
+              href="https://wa.me/923454489123"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold px-6 py-2.5 rounded-full text-sm font-medium"
+              className="btn-gold-outline rounded-full px-5 py-2 text-sm text-primary"
             >
               WhatsApp
             </a>
-            <a href="#contact" className="btn-premium rounded-full text-sm">
-              <span className="text-primary-foreground font-medium px-6 py-2.5 block">Book Now</span>
+            <a href="#contact" className="btn-gold rounded-full px-6 py-2.5 text-sm text-primary-foreground flex items-center gap-2">
+              Book Now
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden relative w-10 h-10 flex items-center justify-center"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <AnimatePresence mode="wait">
+              {isMenuOpen ? (
+                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                  <X className="w-5 h-5" />
+                </motion.div>
+              ) : (
+                <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                  <Menu className="w-5 h-5" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
-      </motion.nav>
+      </motion.header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Fullscreen Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-lg lg:hidden"
+            initial={{ clipPath: 'circle(0% at calc(100% - 40px) 40px)' }}
+            animate={{ clipPath: 'circle(150% at calc(100% - 40px) 40px)' }}
+            exit={{ clipPath: 'circle(0% at calc(100% - 40px) 40px)' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center lg:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
+            <nav className="flex flex-col items-center gap-2">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-2xl font-serif text-foreground hover:text-primary transition-colors"
+                  transition={{ delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-4xl font-display font-bold text-foreground hover:text-gold-gradient transition-colors py-2"
                 >
                   {link.name}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="btn-premium rounded-full mt-4"
-              >
-                <span className="text-primary-foreground font-medium px-8 py-3 block">Book Now</span>
-              </motion.a>
-            </div>
+            </nav>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex gap-4 mt-12"
+            >
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="btn-gold rounded-full px-8 py-3 text-primary-foreground font-medium">
+                Book Now
+              </a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
