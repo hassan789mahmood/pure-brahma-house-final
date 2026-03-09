@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { ArrowUpRight, ChevronDown, Zap } from 'lucide-react';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const rotatingWords = ['Genetics', 'Standards', 'Quality', 'Excellence'];
 const marquee = ['Selective Breeding', 'Limited Production', 'Premium Lines', 'Professional Support', 'Garden Town, Lahore', 'Isabel Brahma', 'Advance Booking'];
@@ -14,20 +15,108 @@ export const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   const [wordIdx, setWordIdx] = useState(0);
+  
+  // Mouse parallax state
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [smoothPos, setSmoothPos] = useState({ x: 0, y: 0 });
+  const [driftAngle, setDriftAngle] = useState(0);
+  const isMouseActive = useRef(false);
+  const mouseTimeout = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const interval = setInterval(() => setWordIdx((i) => (i + 1) % rotatingWords.length), 2500);
     return () => clearInterval(interval);
   }, []);
 
+  // Handle mouse move
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2; // -1 to 1
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    setMousePos({ x, y });
+    isMouseActive.current = true;
+    
+    clearTimeout(mouseTimeout.current);
+    mouseTimeout.current = setTimeout(() => {
+      isMouseActive.current = false;
+    }, 150);
+  }, []);
+
+  // Smooth animation loop: fast follow on mouse, slow drift without
+  useEffect(() => {
+    let animId: number;
+    const animate = () => {
+      setSmoothPos(prev => {
+        if (isMouseActive.current) {
+          // Fast lerp toward mouse
+          return {
+            x: prev.x + (mousePos.x - prev.x) * 0.12,
+            y: prev.y + (mousePos.y - prev.y) * 0.12,
+          };
+        } else {
+          // Slow autonomous drift in a circle
+          const driftX = Math.sin(driftAngle) * 0.15;
+          const driftY = Math.cos(driftAngle * 0.7) * 0.1;
+          return {
+            x: prev.x + (driftX - prev.x) * 0.008,
+            y: prev.y + (driftY - prev.y) * 0.008,
+          };
+        }
+      });
+      setDriftAngle(a => a + 0.008);
+      animId = requestAnimationFrame(animate);
+    };
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, [mousePos, driftAngle]);
+
+  const bgX = smoothPos.x * 30;
+  const bgY = smoothPos.y * 20;
+  const overlayX = smoothPos.x * -15;
+  const overlayY = smoothPos.y * -10;
+
   return (
-    <section id="home" ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="home"
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Full-size background image with parallax */}
+      <motion.div
+        style={{ y }}
+        className="absolute inset-0 will-change-transform"
+      >
+        <div
+          className="absolute -inset-20 bg-cover bg-center transition-none"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            transform: `translate3d(${bgX}px, ${bgY}px, 0) scale(1.15)`,
+          }}
+        />
+      </motion.div>
+
+      {/* Dark overlay for readability */}
+      <div
+        className="absolute -inset-10 bg-background/70 backdrop-blur-[2px]"
+        style={{
+          transform: `translate3d(${overlayX}px, ${overlayY}px, 0)`,
+        }}
+      />
+
       {/* Grid background */}
-      <motion.div style={{ y }} className="absolute inset-0 grid-bg" />
+      <motion.div style={{ y }} className="absolute inset-0 grid-bg opacity-40" />
       
-      {/* Gradient orbs */}
-      <div className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
+      {/* Gradient orbs with mouse parallax */}
+      <div
+        className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[150px] pointer-events-none"
+        style={{ transform: `translate3d(${smoothPos.x * 50}px, ${smoothPos.y * 40}px, 0)` }}
+      />
+      <div
+        className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[120px] pointer-events-none"
+        style={{ transform: `translate3d(${smoothPos.x * -40}px, ${smoothPos.y * -30}px, 0)` }}
+      />
 
       {/* Vertical lines */}
       <div className="absolute inset-0 pointer-events-none">
