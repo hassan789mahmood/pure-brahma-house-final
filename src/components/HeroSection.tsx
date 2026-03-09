@@ -135,7 +135,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex items-center gap-3 glass-light rounded-full px-5 py-2.5 -mt-12"
+              className="inline-flex items-center gap-3 glass-light rounded-full px-5 py-2.5 -mt-[42px]"
             >
               <Zap className="w-4 h-4 text-primary" />
               <span className="mono text-xs uppercase tracking-widest text-muted-foreground">
