@@ -83,7 +83,7 @@ export const ProcessSection = () => {
           transition={{ delay: 0.7 }}
           className="text-center mt-20"
         >
-          <a href="#contact" className="btn-neon rounded-full px-10 py-4 text-primary-foreground font-semibold inline-flex items-center gap-2 group">
+          <a href="/booking" className="btn-neon rounded-full px-10 py-4 text-primary-foreground font-semibold inline-flex items-center gap-2 group">
             Start Your Booking
             <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>→</motion.span>
           </a>

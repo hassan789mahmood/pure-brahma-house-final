@@ -203,7 +203,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-3"
             >
-              <a href="#contact" className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 whitespace-nowrap group">
+              <a href="/booking" className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 whitespace-nowrap group">
                 Book Now
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
