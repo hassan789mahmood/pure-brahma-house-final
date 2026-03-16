@@ -115,7 +115,7 @@ export const ProductsSection = () => {
                 <p className="text-muted-foreground leading-relaxed mb-8">{product.description}</p>
                 
                 <div className="flex flex-wrap gap-3">
-                  <a href="#contact" className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 group/btn">
+                  <a href="/booking" className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 group/btn">
                     Book Now <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   </a>
                   <a href="https://wa.me/923454489123" target="_blank" rel="noopener noreferrer" className="rounded-full px-6 py-3 text-sm text-white font-medium flex items-center gap-2 bg-[#20b858] hover:bg-[#1ba94f] transition-colors">
