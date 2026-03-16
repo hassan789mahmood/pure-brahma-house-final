@@ -114,7 +114,7 @@ export const Navigation = () => {
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
+              href="/booking"
               onClick={() => setOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

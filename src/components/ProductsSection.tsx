@@ -147,7 +147,7 @@ export const ProductsSection = () => {
               {waitlist.map((item, i) => (
                 <motion.a
                   key={item.title}
-                  href="#contact"
+                  href="/booking"
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + i * 0.08 }}
