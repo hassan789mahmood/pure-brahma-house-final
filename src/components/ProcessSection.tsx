@@ -28,7 +28,7 @@ export const ProcessSection = () => {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-primary" />
-          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">004 / Process</span>
+          <span className="mono text-xs uppercase tracking-[0.2em] text-primary">PROCESS</span>
         </motion.div>
 
         <motion.h2
