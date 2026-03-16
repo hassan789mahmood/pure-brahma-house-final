@@ -52,7 +52,7 @@ const Booking = () => {
           </Link>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto mt-12 lg:mt-20 my-0">
+        <div className="max-w-2xl mx-auto mt-0 my-0">
           {isSubmitted ? (/* ───── Success State ───── */<motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, ease: 'easeOut' }} className="text-center">
             
               {/* Animated checkmark */}
