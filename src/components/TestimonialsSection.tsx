@@ -90,6 +90,7 @@ export const TestimonialsSection = () => {
                     </div>
                     <div>
                       <p className="font-semibold">{testimonials[active].author}</p>
+                      {testimonials[active].subtitle && <p className="text-xs text-primary/70">{testimonials[active].subtitle}</p>}
                       <p className="text-sm text-muted-foreground">{testimonials[active].location}</p>
                     </div>
                   </motion.div>
