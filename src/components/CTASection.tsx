@@ -40,10 +40,8 @@ export const CTASection = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
             <a
-              href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I%20would%20like%20to%20inquire%20about%20booking."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-neon rounded-full px-8 py-3 text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrapwhitespace-nowrap group"
+              href="/booking"
+              className="btn-neon rounded-full px-8 py-3 text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap group"
             >
               Request Booking
               <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
