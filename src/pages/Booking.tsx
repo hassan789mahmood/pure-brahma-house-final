@@ -132,7 +132,7 @@ const Booking = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-center mb-12">
+            className="text-center mb-12 mt-0">
               
                 <div className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 mb-6">
                   <Sparkles className="w-4 h-4 text-primary" />
