@@ -153,7 +153,7 @@ const Booking = () => {
               
                 <form
               onSubmit={handleSubmit}
-              className="glass-light rounded-3xl p-8 md:p-10 space-y-6 border border-border/50 py-0 pb-[40px] pt-0">
+              className="glass-light rounded-3xl px-8 md:px-10 pt-6 md:pt-8 pb-8 md:pb-10 space-y-6 border border-border/50">
                 
                   <input type="hidden" name="access_key" value="6c743dac-eb7a-49ea-bcbf-571ee828b16c" />
                   <input type="hidden" name="subject" value="New Booking Request — Pure Brahma House" />
