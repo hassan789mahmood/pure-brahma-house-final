@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Send, Sparkles } from 'lucide-react';
+import { ArrowLeft, Send, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useToast } from '@/hooks/use-toast';
 
 const Booking = () => {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,13 +21,10 @@ const Booking = () => {
       });
 
       if (res.ok) {
-        toast({ title: 'Booking Request Sent!', description: 'We will get back to you shortly.' });
-        form.reset();
-      } else {
-        toast({ title: 'Something went wrong', description: 'Please try again or contact us via WhatsApp.', variant: 'destructive' });
+        setIsSubmitted(true);
       }
     } catch {
-      toast({ title: 'Network error', description: 'Please check your connection and try again.', variant: 'destructive' });
+      // stay on form
     } finally {
       setIsSubmitting(false);
     }
@@ -36,155 +32,168 @@ const Booking = () => {
 
   return (
     <main className="min-h-screen bg-background text-foreground noise">
-      {/* Background effects */}
       <div className="fixed inset-0 grid-bg opacity-30 pointer-events-none" />
       <div className="fixed top-20 right-20 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[200px] pointer-events-none" />
       <div className="fixed bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-12">
-        {/* Back link */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mono text-sm"
-          >
+        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mono text-sm">
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
         </motion.div>
 
         <div className="max-w-2xl mx-auto mt-12 lg:mt-20">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="mono text-xs uppercase tracking-[0.15em] text-muted-foreground">Limited Availability</span>
-            </div>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-4">
-              Book Your <span className="text-neon text-glow">Brahma</span>
-            </h1>
-            <p className="text-muted-foreground text-base md:text-lg max-w-lg mx-auto">
-              Fill in the form below and we'll confirm availability and get back to you promptly.
-            </p>
-          </motion.div>
-
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="glass-light rounded-3xl p-8 md:p-10 space-y-6 border border-border/50"
+          {isSubmitted ? (
+            /* ───── Success State ───── */
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="text-center"
             >
-              <input type="hidden" name="access_key" value="6c743dac-eb7a-49ea-bcbf-571ee828b16c" />
-              <input type="hidden" name="subject" value="New Booking Request — Pure Brahma House" />
-
-              {/* Name */}
-              <div className="space-y-2">
-                <label htmlFor="name" className="mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Full Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  required
-                  maxLength={100}
-                  placeholder="Your full name"
-                  className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm"
-                />
-              </div>
-
-              {/* Email */}
-              <div className="space-y-2">
-                <label htmlFor="email" className="mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Email Address
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  required
-                  maxLength={254}
-                  placeholder="you@example.com"
-                  className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm"
-                />
-              </div>
-
-              {/* Phone */}
-              <div className="space-y-2">
-                <label htmlFor="phone" className="mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Phone / WhatsApp
-                </label>
-                <input
-                  id="phone"
-                  type="tel"
-                  name="phone"
-                  maxLength={20}
-                  placeholder="+92 345 4489123"
-                  className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm"
-                />
-              </div>
-
-              {/* Message */}
-              <div className="space-y-2">
-                <label htmlFor="message" className="mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Booking Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  maxLength={2000}
-                  rows={5}
-                  placeholder="Which breed are you interested in? How many chicks/eggs? Any other details..."
-                  className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm resize-none"
-                />
-              </div>
-
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-neon rounded-full py-3.5 text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              {/* Animated checkmark */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
+                className="mx-auto mb-8 w-24 h-24 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center"
               >
-                {isSubmitting ? 'Sending...' : 'Submit Booking Request'}
-                {!isSubmitting && <Send className="w-4 h-4" />}
-              </button>
-            </form>
-          </motion.div>
+                <CheckCircle2 className="w-12 h-12 text-primary" />
+              </motion.div>
 
-          {/* WhatsApp fallback */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-center mt-8"
-          >
-            <p className="text-muted-foreground text-sm mb-3">Or reach us directly</p>
-            <a
-              href="https://wa.me/923454489123"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-white font-semibold text-sm bg-[#20b858] hover:bg-[#1ba94f] transition-colors"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              Chat on WhatsApp
-            </a>
-          </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-4">
+                  Booking <span className="text-neon text-glow">Confirmed!</span>
+                </h1>
+                <p className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-3">
+                  Thank you for your booking request. We've received your details and will get back to you within 24 hours.
+                </p>
+              </motion.div>
+
+              {/* Info card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="glass-light rounded-2xl p-6 md:p-8 border border-border/50 mt-10 mb-8 text-left"
+              >
+                <h3 className="mono text-xs uppercase tracking-[0.15em] text-primary mb-4">What happens next?</h3>
+                <ul className="space-y-4">
+                  {[
+                    'We will review your request and confirm availability.',
+                    'You\'ll receive a confirmation via email or WhatsApp.',
+                    'For faster response, message us directly on WhatsApp.',
+                  ].map((step, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mono text-xs text-primary font-bold mt-0.5">
+                        {i + 1}
+                      </span>
+                      <span className="text-sm text-muted-foreground leading-relaxed">{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Action buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              >
+                <a
+                  href="https://wa.me/923454489123?text=Hi%2C%20I%20just%20submitted%20a%20booking%20request%20on%20your%20website.%20Looking%20forward%20to%20your%20response!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Chat with us on WhatsApp
+                </a>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-sm border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-all"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Home
+                </Link>
+              </motion.div>
+            </motion.div>
+          ) : (
+            /* ───── Form State ───── */
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="text-center mb-12"
+              >
+                <div className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 mb-6">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span className="mono text-xs uppercase tracking-[0.15em] text-muted-foreground">Limited Availability</span>
+                </div>
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-4">
+                  Book Your <span className="text-neon text-glow">Brahma</span>
+                </h1>
+                <p className="text-muted-foreground text-base md:text-lg max-w-lg mx-auto">
+                  Fill in the form below and we'll confirm availability and get back to you promptly.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.25 }}
+              >
+                <form
+                  onSubmit={handleSubmit}
+                  className="glass-light rounded-3xl p-8 md:p-10 space-y-6 border border-border/50"
+                >
+                  <input type="hidden" name="access_key" value="6c743dac-eb7a-49ea-bcbf-571ee828b16c" />
+                  <input type="hidden" name="subject" value="New Booking Request — Pure Brahma House" />
+
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="mono text-xs uppercase tracking-widest text-muted-foreground">Full Name</label>
+                    <input id="name" type="text" name="name" required maxLength={100} placeholder="Your full name" className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="mono text-xs uppercase tracking-widest text-muted-foreground">Email Address</label>
+                    <input id="email" type="email" name="email" required maxLength={254} placeholder="you@example.com" className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="mono text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</label>
+                    <input id="phone" type="tel" name="phone" maxLength={20} placeholder="+92 345 4489123" className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="mono text-xs uppercase tracking-widest text-muted-foreground">Booking Details</label>
+                    <textarea id="message" name="message" required maxLength={2000} rows={5} placeholder="Which breed are you interested in? How many chicks/eggs? Any other details..." className="w-full rounded-xl border border-border/50 bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all text-sm resize-none" />
+                  </div>
+
+                  <button type="submit" disabled={isSubmitting} className="w-full btn-neon rounded-full py-3.5 text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                    {isSubmitting ? 'Sending...' : 'Submit Booking Request'}
+                    {!isSubmitting && <Send className="w-4 h-4" />}
+                  </button>
+                </form>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8">
+                <p className="text-muted-foreground text-sm mb-3">Or reach us directly</p>
+                <a href="https://wa.me/923454489123" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-colors">
+                  <MessageCircle className="w-5 h-5" />
+                  Chat on WhatsApp
+                </a>
+              </motion.div>
+            </>
+          )}
         </div>
       </div>
     </main>
