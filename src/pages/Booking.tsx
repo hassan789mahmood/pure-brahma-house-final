@@ -17,21 +17,29 @@ const Booking = () => {
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        body: formData
       });
 
       if (res.ok) {
         setIsSubmitted(true);
       }
     } catch {
-      // stay on form
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
-  return (
-    <main className="min-h-screen bg-background text-foreground noise">
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // stay on form
+    } finally {setIsSubmitting(false);}};return <main className="min-h-screen bg-background text-foreground noise">
       <div className="fixed inset-0 grid-bg opacity-30 pointer-events-none" />
       <div className="fixed top-20 right-20 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[200px] pointer-events-none" />
       <div className="fixed bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
@@ -44,30 +52,22 @@ const Booking = () => {
           </Link>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto mt-6 lg:mt-8">
-          {isSubmitted ? (
-            /* ───── Success State ───── */
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="text-center"
-            >
+        <div className="max-w-2xl mx-auto mt-12 lg:mt-20 my-0">
+          {isSubmitted ? (/* ───── Success State ───── */<motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, ease: 'easeOut' }} className="text-center">
+            
               {/* Animated checkmark */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
-                className="mx-auto mb-8 w-24 h-24 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center"
-              >
+              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
+            className="mx-auto mb-8 w-24 h-24 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center">
+              
                 <CheckCircle2 className="w-12 h-12 text-primary" />
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-              >
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}>
+              
                 <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] mb-4">
                   Booking <span className="text-neon text-glow">Confirmed!</span>
                 </h1>
@@ -78,62 +78,62 @@ const Booking = () => {
 
               {/* Info card */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="glass-light rounded-2xl p-6 md:p-8 border border-border/50 mt-10 mb-8 text-left"
-              >
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="glass-light rounded-2xl p-6 md:p-8 border border-border/50 mt-10 mb-8 text-left">
+              
                 <h3 className="mono text-xs uppercase tracking-[0.15em] text-primary mb-4">What happens next?</h3>
                 <ul className="space-y-4">
                   {[
-                    'We will review your request and confirm availability.',
-                    'You\'ll receive a confirmation via email or WhatsApp.',
-                    'For faster response, message us directly on WhatsApp.',
-                  ].map((step, i) => (
-                    <li key={i} className="flex items-start gap-3">
+              'We will review your request and confirm availability.',
+              'You\'ll receive a confirmation via email or WhatsApp.',
+              'For faster response, message us directly on WhatsApp.'].
+              map((step, i) =>
+              <li key={i} className="flex items-start gap-3">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mono text-xs text-primary font-bold mt-0.5">
                         {i + 1}
                       </span>
                       <span className="text-sm text-muted-foreground leading-relaxed">{step}</span>
                     </li>
-                  ))}
+              )}
                 </ul>
               </motion.div>
 
               {/* Action buttons */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4"
-              >
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              
                 <a
-                  href="https://wa.me/923454489123?text=Hi%2C%20I%20just%20submitted%20a%20booking%20request%20on%20your%20website.%20Looking%20forward%20to%20your%20response!"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:scale-[1.02] active:scale-[0.98]"
-                >
+              href="https://wa.me/923454489123?text=Hi%2C%20I%20just%20submitted%20a%20booking%20request%20on%20your%20website.%20Looking%20forward%20to%20your%20response!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:scale-[1.02] active:scale-[0.98]">
+                
                   <MessageCircle className="w-5 h-5" />
                   Chat with us on WhatsApp
                 </a>
                 <Link
-                  to="/"
-                  className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-sm border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-all"
-                >
+              to="/"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-sm border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-all">
+                
                   <ArrowLeft className="w-4 h-4" />
                   Back to Home
                 </Link>
               </motion.div>
-            </motion.div>
-          ) : (
-            /* ───── Form State ───── */
-            <>
+            </motion.div>) : (
+
+        /* ───── Form State ───── */
+        <>
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-center mb-12"
-              >
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-center mb-12">
+              
                 <div className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 mb-6">
                   <Sparkles className="w-4 h-4 text-primary" />
                   <span className="mono text-xs uppercase tracking-[0.15em] text-muted-foreground">Limited Availability</span>
@@ -147,14 +147,14 @@ const Booking = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.25 }}
-              >
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}>
+              
                 <form
-                  onSubmit={handleSubmit}
-                  className="glass-light rounded-3xl p-8 md:p-10 space-y-6 border border-border/50"
-                >
+              onSubmit={handleSubmit}
+              className="glass-light rounded-3xl p-8 md:p-10 space-y-6 border border-border/50 py-0 pb-[40px] pt-0">
+                
                   <input type="hidden" name="access_key" value="6c743dac-eb7a-49ea-bcbf-571ee828b16c" />
                   <input type="hidden" name="subject" value="New Booking Request — Pure Brahma House" />
 
@@ -192,12 +192,12 @@ const Booking = () => {
                   Chat on WhatsApp
                 </a>
               </motion.div>
-            </>
-          )}
+            </>)
+        }
         </div>
       </div>
-    </main>
-  );
+    </main>;
+
 };
 
 export default Booking;
