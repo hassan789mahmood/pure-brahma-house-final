@@ -110,7 +110,7 @@ export const AboutSection = () => {
             <div className="relative rounded-3xl overflow-hidden border border-border/50 gradient-border">
               <div className="aspect-[4/5]">
                 <img
-                  src="https://www.purebrahmahouse.com/images/brahma-hen.png"
+                  src={aboutBrahma}
                   alt="Isabel Brahma"
                   className="w-full h-full object-cover"
                 />
