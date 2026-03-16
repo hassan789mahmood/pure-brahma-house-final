@@ -44,7 +44,7 @@ const Booking = () => {
           </Link>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto mt-12 lg:mt-20">
+        <div className="max-w-2xl mx-auto mt-6 lg:mt-8">
           {isSubmitted ? (
             /* ───── Success State ───── */
             <motion.div
