@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import aboutBrahma from '@/assets/about-brahma.png';
 
 const stats = [
   { value: 4, suffix: '+', label: 'Premium Varieties' },
