@@ -208,7 +208,7 @@ export const HeroSection = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
               <a
-                href="https://wa.me/923454489123"
+                href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I'm%20interested%20in%20your%20Brahma%20birds%20and%20would%20like%20to%20place%20an%20order.%20Please%20share%20further%20information.%20Thank%20you."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full px-6 py-3 text-sm text-white font-semibold flex items-center gap-2 whitespace-nowrap bg-[#20b858] hover:bg-[#1ba94f] transition-colors"

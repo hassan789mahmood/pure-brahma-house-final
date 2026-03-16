@@ -187,7 +187,7 @@ const Booking = () => {
 
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8">
                 <p className="text-muted-foreground text-sm mb-3">Or reach us directly</p>
-                <a href="https://wa.me/923454489123" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-colors">
+                <a href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I'm%20interested%20in%20your%20Brahma%20birds%20and%20would%20like%20to%20place%20an%20order.%20Please%20share%20further%20information.%20Thank%20you." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-colors">
                   <MessageCircle className="w-5 h-5" />
                   Chat on WhatsApp
                 </a>
