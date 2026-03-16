@@ -108,7 +108,7 @@ const Booking = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4">
               
                 <a
-              href="https://wa.me/923454489123?text=Hi%2C%20I%20just%20submitted%20a%20booking%20request%20on%20your%20website.%20Looking%20forward%20to%20your%20response!"
+              href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I'm%20interested%20in%20your%20Brahma%20birds%20and%20would%20like%20to%20place%20an%20order.%20Please%20share%20further%20information.%20Thank%20you."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 text-white font-semibold text-sm bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:scale-[1.02] active:scale-[0.98]">
