@@ -66,7 +66,7 @@ export const Navigation = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="#contact"
+              href="/booking"
               className="btn-neon rounded-full px-6 py-2.5 text-sm text-primary-foreground flex items-center gap-2 whitespace-nowrap"
             >
               Book Now <ArrowUpRight className="w-3.5 h-3.5" />
