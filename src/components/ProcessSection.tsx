@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 const steps = [
   { num: '01', title: 'Submit Request', desc: 'Fill the booking form or contact us via WhatsApp.' },
   { num: '02', title: 'Confirm Availability', desc: 'We verify current batch status and batch size.' },
-  { num: '03', title: 'Booking Confirmed', desc: 'Receive your official booking confirmation.' },
+  { num: '03', title: 'Make Payment', desc: 'Complete payment to secure your booking' },
   { num: '04', title: 'Finalize via WhatsApp', desc: 'Coordinate logistics, timing, and final details.' },
   { num: '05', title: 'Pickup / Dispatch', desc: 'Collect from Garden Town or coordinated dispatch.' },
 ];
