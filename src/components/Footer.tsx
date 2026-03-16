@@ -62,7 +62,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/923454489123" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I'm%20interested%20in%20your%20Brahma%20birds%20and%20would%20like%20to%20place%20an%20order.%20Please%20share%20further%20information.%20Thank%20you." target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>0345 4489123</span>
                 </a>
@@ -86,7 +86,7 @@ export const Footer = () => {
 
       {/* Floating WhatsApp */}
       <motion.a
-        href="https://wa.me/923454489123"
+        href="https://wa.me/923454489123?text=Hello%20Pure%20Brahma%20House%2C%20I'm%20interested%20in%20your%20Brahma%20birds%20and%20would%20like%20to%20place%20an%20order.%20Please%20share%20further%20information.%20Thank%20you."
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
