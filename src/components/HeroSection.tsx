@@ -195,8 +195,8 @@ export const HeroSection = () => {
               <p className="text-base md:text-lg text-foreground leading-relaxed">
                 Carefully bred, high-quality chicks
               </p>
-              <p className="text-sm text-primary/80 font-medium">Limited batches to maintain exceptional quality.</p>
-              <p className="text-sm text-primary/80 font-medium">Available only on advance booking.</p>
+              <p className="text-sm text-primary/80 font-medium">Limited Availability</p>
+              <p className="text-sm text-primary/80 font-medium">Advance Booking Required</p>
             </motion.div>
 
             {/* CTAs */}
