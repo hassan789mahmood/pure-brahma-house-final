@@ -29,7 +29,7 @@ export const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: hidden ? -100 : 0 }}
         transition={{ duration: 0.4 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 mb-0 ${
           scrolled ? 'glass py-4' : 'py-6'
         }`}
       >
