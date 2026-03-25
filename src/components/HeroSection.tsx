@@ -182,9 +182,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="max-w-lg space-y-3"
             >
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Premium Brahma Breeds – Limited Availability
-              </p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">Premium Brahma Breeds</p>
               <p className="text-base md:text-lg text-foreground leading-relaxed">
                 Specializing in <span className="text-foreground font-medium">Isabel</span>,{" "}
                 <span className="text-foreground font-medium">Light Columbian</span>,{" "}
