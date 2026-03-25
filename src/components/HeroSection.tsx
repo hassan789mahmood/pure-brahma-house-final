@@ -1,21 +1,27 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useEffect, useState, useCallback } from 'react';
-import { ArrowUpRight, ChevronDown, Zap } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useEffect, useState, useCallback } from "react";
+import { ArrowUpRight, ChevronDown, Zap } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
-const rotatingWords = ['Genetics', 'Standards', 'Quality', 'Excellence'];
-const marquee = ['Selective Breeding', 'Limited Production', 'Premium Lines', 'Professional Support', 'Advance Booking'];
+const rotatingWords = ["Genetics", "Standards", "Quality", "Excellence"];
+const marquee = [
+  "Selective Breeding",
+  "Limited Production",
+  "Premium Lines",
+  "Professional Support",
+  "Advance Booking",
+];
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '40%']);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   const [wordIdx, setWordIdx] = useState(0);
-  
+
   // Mouse parallax state
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [smoothPos, setSmoothPos] = useState({ x: 0, y: 0 });
@@ -36,7 +42,7 @@ export const HeroSection = () => {
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
     setMousePos({ x, y });
     isMouseActive.current = true;
-    
+
     clearTimeout(mouseTimeout.current);
     mouseTimeout.current = setTimeout(() => {
       isMouseActive.current = false;
@@ -47,7 +53,7 @@ export const HeroSection = () => {
   useEffect(() => {
     let animId: number;
     const animate = () => {
-      setSmoothPos(prev => {
+      setSmoothPos((prev) => {
         if (isMouseActive.current) {
           // Fast lerp toward mouse
           return {
@@ -64,7 +70,7 @@ export const HeroSection = () => {
           };
         }
       });
-      setDriftAngle(a => a + 0.008);
+      setDriftAngle((a) => a + 0.008);
       animId = requestAnimationFrame(animate);
     };
     animId = requestAnimationFrame(animate);
@@ -84,10 +90,7 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Full-size background image with parallax */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 will-change-transform"
-      >
+      <motion.div style={{ y }} className="absolute inset-0 will-change-transform">
         <div
           className="absolute -inset-4 bg-cover bg-center transition-none"
           style={{
@@ -107,7 +110,7 @@ export const HeroSection = () => {
 
       {/* Grid background */}
       <motion.div style={{ y }} className="absolute inset-0 grid-bg opacity-40" />
-      
+
       {/* Gradient orbs with mouse parallax */}
       <div
         className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[150px] pointer-events-none"
@@ -183,17 +186,17 @@ export const HeroSection = () => {
                 Premium Brahma Breeds – Limited Availability
               </p>
               <p className="text-base md:text-lg text-foreground leading-relaxed">
-                Specializing in <span className="text-foreground font-medium">Isabel</span>, <span className="text-foreground font-medium">Light Columbian</span>, <span className="text-foreground font-medium">Blue Columbian</span>, <span className="text-foreground font-medium">BSO</span>, and <span className="text-foreground font-medium">Dark Brahma</span>.
+                Specializing in <span className="text-foreground font-medium">Isabel</span>,{" "}
+                <span className="text-foreground font-medium">Light Columbian</span>,{" "}
+                <span className="text-foreground font-medium">Blue Columbian</span>,{" "}
+                <span className="text-foreground font-medium">BSO</span>, and{" "}
+                <span className="text-foreground font-medium">Dark Brahma</span>.
               </p>
               <p className="text-base md:text-lg text-foreground leading-relaxed">
-                Carefully bred, high-quality chicks and fertile eggs.
+                Carefully bred, high-quality chicks
               </p>
-              <p className="text-sm text-primary/80 font-medium">
-                Limited batches to maintain exceptional quality.
-              </p>
-              <p className="text-sm text-primary/80 font-medium">
-                Available only on advance booking.
-              </p>
+              <p className="text-sm text-primary/80 font-medium">Limited batches to maintain exceptional quality.</p>
+              <p className="text-sm text-primary/80 font-medium">Available only on advance booking.</p>
             </motion.div>
 
             {/* CTAs */}
@@ -203,7 +206,10 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-3"
             >
-              <a href="/booking" className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 whitespace-nowrap group">
+              <a
+                href="/booking"
+                className="btn-neon rounded-full px-6 py-3 text-sm text-primary-foreground font-semibold flex items-center gap-2 whitespace-nowrap group"
+              >
                 Book Now
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
@@ -240,7 +246,10 @@ export const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 border-t border-border/50 py-4 glass z-10 overflow-hidden">
         <div className="flex whitespace-nowrap marquee">
           {[...marquee, ...marquee, ...marquee, ...marquee].map((item, i) => (
-            <span key={i} className="mx-8 mono text-xs uppercase tracking-wider text-foreground flex items-center gap-3">
+            <span
+              key={i}
+              className="mx-8 mono text-xs uppercase tracking-wider text-foreground flex items-center gap-3"
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
               {item}
             </span>
