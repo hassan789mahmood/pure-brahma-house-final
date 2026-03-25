@@ -102,7 +102,7 @@ export const HeroSection = () => {
 
       {/* Dark overlay for readability */}
       <div
-        className="absolute -inset-10 bg-background/70 backdrop-blur-[2px]"
+        className="absolute -inset-10 bg-background/50"
         style={{
           transform: `translate3d(${overlayX}px, ${overlayY}px, 0)`,
         }}
