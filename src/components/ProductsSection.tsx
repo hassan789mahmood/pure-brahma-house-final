@@ -19,7 +19,7 @@ const available = [
 
 const waitlist = [
   { title: 'Light Columbian Brahma', desc: 'Striking white plumage with black hackle markings.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png', imgClass: '' },
-  { title: 'Blue Columbian Brahma', desc: 'Rare variety with distinctive blue-laced feathering.', img: blueColumbianImg, imgClass: 'scale-90' },
+  { title: 'Blue Columbian Brahma', desc: 'Rare variety with distinctive blue-laced feathering.', img: blueColumbianImg, imgClass: '' },
   { title: 'BSO Brahma', desc: 'Premium BSO variety bred to standard expectations.', img: 'https://www.purebrahmahouse.com/images/farm-environment.png', imgClass: '' },
   { title: 'Dark Brahma', desc: 'Classic variety with bold, intricate feather patterning.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png', imgClass: '' },
   { title: 'Isabel Brahma', desc: 'Premium Isabel variety with refined golden-buff coloring.', img: '/images/isabel-brahma.jpg', imgClass: '' },
