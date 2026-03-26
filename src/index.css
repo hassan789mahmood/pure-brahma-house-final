@@ -135,8 +135,8 @@
   .glass-light {
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
-    background: hsla(60, 10%, 95%, 0.06);
-    border: 1px solid hsla(60, 10%, 95%, 0.08);
+    background: hsla(220, 12%, 8%, 0.45);
+    border: 1px solid hsla(60, 10%, 95%, 0.1);
   }
 
   /* Premium buttons */
