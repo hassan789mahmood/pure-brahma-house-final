@@ -37,7 +37,7 @@ export const Navigation = () => {
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <motion.a href="#home" whileHover={{ scale: 1.02 }} className="flex items-center gap-3">
-            <img src={logo} alt="Pure Brahma House" className="w-10 h-10 rounded-lg object-contain" />
+            <img src={logo} alt="Pure Brahma House" className="w-14 h-14 rounded-lg object-contain" />
             <div className="hidden sm:block">
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
