@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import blueColumbianImg from '@/assets/blue-columbian-brahma.png';
 import bsoBrahmaImg from '@/assets/bso-brahma.png';
 import lightColumbianImg from '@/assets/light-columbian-brahma.png';
+import darkBrahmaImg from '@/assets/dark-brahma.png';
 
 const available = [
   {
@@ -23,7 +24,7 @@ const waitlist = [
   { title: 'Light Columbian Brahma', desc: 'Striking white plumage with black hackle markings.', img: lightColumbianImg, imgClass: '' },
   { title: 'Blue Columbian Brahma', desc: 'Rare variety with distinctive blue-laced feathering.', img: blueColumbianImg, imgClass: 'object-[center_30%]' },
   { title: 'BSO Brahma', desc: 'Premium BSO variety bred to standard expectations.', img: bsoBrahmaImg, imgClass: 'object-[center_35%]' },
-  { title: 'Dark Brahma', desc: 'Classic variety with bold, intricate feather patterning.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png', imgClass: '' },
+  { title: 'Dark Brahma', desc: 'Classic variety with bold, intricate feather patterning.', img: darkBrahmaImg, imgClass: '' },
   { title: 'Isabel Brahma', desc: 'Premium Isabel variety with refined golden-buff coloring.', img: '/images/isabel-brahma.jpg', imgClass: '' },
 ];
 
