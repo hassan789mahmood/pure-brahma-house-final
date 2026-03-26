@@ -139,7 +139,7 @@ export const ProductsSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 sm:p-8">
+                  <div className="p-5 sm:p-8 flex flex-col flex-1">
                     <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-neon transition-colors">
                       {product.title}
                     </h3>
@@ -157,7 +157,7 @@ export const ProductsSection = () => {
                       </div>
                     )}
 
-                    <div className="flex gap-2 sm:gap-3">
+                    <div className="flex gap-2 sm:gap-3 mt-auto">
                       <a href="/booking" className="btn-neon rounded-full px-3 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm text-primary-foreground font-semibold flex-1 flex items-center justify-center gap-1.5 whitespace-nowrap group/btn">
                         Book Now <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 flex-shrink-0" />
                       </a>
