@@ -159,7 +159,7 @@ export const ProductsSection = () => {
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <img src={item.img} alt={item.title} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${item.imgClass}`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/40 to-transparent" />
                     <div className="absolute top-3 left-3">
                       <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
                     </div>
