@@ -147,10 +147,10 @@ export const ProductsSection = () => {
                     {/* Pricing */}
                     {product.originalPrice && product.discountedPrice && (
                       <div className="flex items-center gap-3 mb-5 sm:mb-8">
-                        <span className="mono text-sm text-muted-foreground line-through">
+                        <span className="text-sm text-muted-foreground line-through">
                           {formatPrice(product.originalPrice)}
                         </span>
-                        <span className="mono text-lg sm:text-xl font-bold text-primary">
+                        <span className="text-lg sm:text-xl font-bold text-primary font-display">
                           {formatPrice(product.discountedPrice)}
                         </span>
                       </div>
