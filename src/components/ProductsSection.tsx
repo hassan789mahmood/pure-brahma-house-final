@@ -29,7 +29,7 @@ const products: Product[] = [
   {
     title: 'Isabel Brahma - One Week Old Chicks',
     description: 'Selectively bred Isabel Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: 'https://www.purebrahmahouse.com/images/isabel-chicks.png',
+    image: isabelChicks2weekImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
