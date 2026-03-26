@@ -129,7 +129,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <motion.div style={{ opacity, scale }} className="relative z-10 container mx-auto px-6 lg:px-12 pt-8 pb-20">
+      <motion.div style={{ opacity, scale }} className="relative z-10 container mx-auto px-6 lg:px-12 pt-2 sm:pt-8 pb-20">
         <div className="max-w-3xl space-y-10">
           {/* Left content */}
           <div className="space-y-10 py-0 mt-0">
