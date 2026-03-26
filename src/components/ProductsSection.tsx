@@ -74,7 +74,8 @@ const products: Product[] = [
     description: 'Fertile eggs collected from controlled Light Columbian Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
     image: isabelBrahmaEggsImg,
     status: 'available',
-    originalPrice: 1200,
+    originalPrice: 1500,
+    discountedPrice: 1200,
   },
 
   // ── Salmon Available ──
@@ -99,7 +100,8 @@ const products: Product[] = [
     description: 'Fertile eggs collected from controlled Salmon Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
     image: isabelBrahmaEggsImg,
     status: 'available',
-    originalPrice: 1200,
+    originalPrice: 1500,
+    discountedPrice: 1200,
   },
 
   // ── Waitlist ──
