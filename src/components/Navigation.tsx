@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const links = [
   { name: 'Home', href: '#home' },
@@ -36,13 +37,7 @@ export const Navigation = () => {
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <motion.a href="#home" whileHover={{ scale: 1.02 }} className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6 text-primary-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
-            </div>
+            <img src={logo} alt="Pure Brahma House" className="w-10 h-10 rounded-lg object-contain" />
             <div className="hidden sm:block">
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
