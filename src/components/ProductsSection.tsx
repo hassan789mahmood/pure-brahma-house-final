@@ -3,6 +3,7 @@ import { useRef, useCallback, useEffect, useState } from 'react';
 import { ArrowUpRight, ChevronLeft, ChevronRight, Clock, Radio } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import blueColumbianImg from '@/assets/blue-columbian-brahma.png';
+import bsoBrahmaImg from '@/assets/bso-brahma.png';
 
 const available = [
   {
