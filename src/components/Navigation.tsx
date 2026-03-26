@@ -44,7 +44,7 @@ export const Navigation = () => {
                 alt="Pure Brahma House"
                 className="w-full h-full object-cover scale-125"
               />
-            />
+            </div>
             <div>
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
