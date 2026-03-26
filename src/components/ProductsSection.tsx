@@ -56,7 +56,7 @@ export const ProductsSection = () => {
   const waitlist = products.filter(p => p.status === 'waitlist');
 
   // Available carousel
-  const [availRef, availApi] = useEmblaCarousel({ loop: true, align: 'start', slidesToScroll: 1 });
+  const [availRef, availApi] = useEmblaCarousel({ loop: available.length > 1, align: 'start', slidesToScroll: 1, dragFree: false });
   const [availPrev, setAvailPrev] = useState(false);
   const [availNext, setAvailNext] = useState(true);
   const scrollAvailPrev = useCallback(() => availApi?.scrollPrev(), [availApi]);
@@ -66,8 +66,9 @@ export const ProductsSection = () => {
     if (!availApi) return;
     const onSelect = () => { setAvailPrev(availApi.canScrollPrev()); setAvailNext(availApi.canScrollNext()); };
     availApi.on('select', onSelect);
+    availApi.on('reInit', onSelect);
     onSelect();
-    return () => { availApi.off('select', onSelect); };
+    return () => { availApi.off('select', onSelect); availApi.off('reInit', onSelect); };
   }, [availApi]);
 
   // Waitlist carousel
