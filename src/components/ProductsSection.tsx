@@ -46,6 +46,58 @@ const products: Product[] = [
     discountedPrice: 1500,
   },
 
+  // ── Light Columbian Available ──
+  {
+    title: 'Light Columbian Brahma - One Week Old Chicks',
+    description: 'Selectively bred Light Columbian Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 3500,
+    discountedPrice: 3000,
+  },
+  {
+    title: 'Light Columbian Brahma - Two Week Old Chicks',
+    description: 'Selectively bred Light Columbian Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 4000,
+    discountedPrice: 3500,
+  },
+  {
+    title: 'Light Columbian Brahma Eggs',
+    description: 'Fertile eggs collected from controlled Light Columbian Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 1200,
+    discountedPrice: 800,
+  },
+
+  // ── Salmon Available ──
+  {
+    title: 'Salmon Brahma - One Week Old Chicks',
+    description: 'Selectively bred Salmon Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 3500,
+    discountedPrice: 3000,
+  },
+  {
+    title: 'Salmon Brahma - Two Week Old Chicks',
+    description: 'Selectively bred Salmon Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 4000,
+    discountedPrice: 3500,
+  },
+  {
+    title: 'Salmon Brahma Eggs',
+    description: 'Fertile eggs collected from controlled Salmon Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
+    image: lightColumbianImg,
+    status: 'available',
+    originalPrice: 1200,
+    discountedPrice: 800,
+  },
+
   // ── Waitlist ──
   { title: 'Light Columbian Brahma', description: 'Striking white plumage with black hackle markings.', image: lightColumbianImg, status: 'waitlist' },
   { title: 'Blue Columbian Brahma', description: 'Rare variety with distinctive blue-laced feathering.', image: blueColumbianImg, imgClass: 'object-[center_30%]', status: 'waitlist' },
