@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Phone, ArrowUpRight } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.jpg';
 
 const links = {
   'Quick Links': [
