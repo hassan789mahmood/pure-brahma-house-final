@@ -267,30 +267,34 @@ export const ProductsSection = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={waitRef}>
-            <div className="flex gap-5">
+            <div className="flex -ml-5">
               {waitlist.map((item, i) => (
-                <motion.a
+                <motion.div
                   key={item.title}
-                  href="/booking"
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + i * 0.08 }}
-                  className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block flex-[0_0_calc(25%-15px)] min-w-0 max-sm:flex-[0_0_80%] max-lg:flex-[0_0_calc(50%-10px)]"
+                  className="pl-5 flex-[0_0_25%] min-w-0 max-sm:flex-[0_0_80%] max-lg:flex-[0_0_50%]"
                 >
-                  <div className="relative aspect-square overflow-hidden">
-                    <img src={item.image} alt={item.title} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${item.imgClass || ''}`} />
-                    <div className="absolute top-3 left-3">
-                      <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
+                  <a
+                    href="/booking"
+                    className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block h-full"
+                  >
+                    <div className="relative aspect-square overflow-hidden">
+                      <img src={item.image} alt={item.title} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${item.imgClass || ''}`} />
+                      <div className="absolute top-3 left-3">
+                        <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="font-display font-bold mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
-                    <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
-                    <span className="inline-flex items-center gap-1 mono text-xs text-primary mt-3">
-                      Join Waitlist <ArrowUpRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </motion.a>
+                    <div className="p-5">
+                      <h4 className="font-display font-bold mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
+                      <span className="inline-flex items-center gap-1 mono text-xs text-primary mt-3">
+                        Join Waitlist <ArrowUpRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+                </motion.div>
               ))}
             </div>
           </div>
