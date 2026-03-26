@@ -28,7 +28,7 @@ export const Footer = () => {
               <img
                 src={logo}
                 alt="Pure Brahma House"
-                className="w-[60px] h-[60px] rounded-lg object-cover scale-125 cursor-pointer"
+                className="w-15 h-15 rounded-lg object-cover scale-125 cursor-pointer"
                 onClick={(e) => { e.preventDefault(); setShowLogo(true); }}
               />
               <span className="font-display text-lg font-semibold tracking-tight">
