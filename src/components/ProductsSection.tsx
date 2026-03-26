@@ -75,7 +75,6 @@ const products: Product[] = [
     image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
-    discountedPrice: 800,
   },
 
   // ── Salmon Available ──
@@ -101,7 +100,6 @@ const products: Product[] = [
     image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
-    discountedPrice: 800,
   },
 
   // ── Waitlist ──
@@ -215,14 +213,22 @@ export const ProductsSection = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed mb-4 sm:mb-5">{product.description}</p>
 
                       {/* Pricing */}
-                      {product.originalPrice && product.discountedPrice && (
+                      {product.originalPrice && (
                         <div className="flex items-center gap-3 mb-5 sm:mb-8">
-                          <span className="text-base text-muted-foreground line-through">
-                            {formatPrice(product.originalPrice)}
-                          </span>
-                          <span className="text-lg sm:text-xl font-bold text-primary font-display">
-                            {formatPrice(product.discountedPrice)}
-                          </span>
+                          {product.discountedPrice ? (
+                            <>
+                              <span className="text-base text-muted-foreground line-through">
+                                {formatPrice(product.originalPrice)}
+                              </span>
+                              <span className="text-lg sm:text-xl font-bold text-primary font-display">
+                                {formatPrice(product.discountedPrice)}
+                              </span>
+                            </>
+                          ) : (
+                            <span className="text-lg sm:text-xl font-bold text-primary font-display">
+                              {formatPrice(product.originalPrice)}
+                            </span>
+                          )}
                         </div>
                       )}
 
