@@ -25,12 +25,13 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:justify-self-start">
             <a href="#home" className="inline-flex items-center gap-3 mb-6">
-              <img
-                src={logo}
-                alt="Pure Brahma House"
-                className="w-16 h-16 rounded-lg object-contain cursor-pointer"
-                onClick={(e) => { e.preventDefault(); setShowLogo(true); }}
-              />
+              <div className="w-16 h-16 rounded-lg overflow-hidden cursor-pointer" onClick={(e) => { e.preventDefault(); setShowLogo(true); }}>
+                <img
+                  src={logo}
+                  alt="Pure Brahma House"
+                  className="w-full h-full object-cover scale-125"
+                />
+              </div>
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
               </span>
