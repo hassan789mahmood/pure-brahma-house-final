@@ -122,7 +122,7 @@ export const ProductsSection = () => {
                   initial={{ opacity: 0, y: 60 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 + i * 0.1 }}
-                  className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex-[0_0_calc(50%-12px)] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_calc(50%-12px)]"
+                  className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex-[0_0_calc(50%-12px)] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_calc(50%-12px)] flex flex-col"
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/10] overflow-hidden">
@@ -139,7 +139,7 @@ export const ProductsSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 sm:p-8">
+                  <div className="p-5 sm:p-8 flex flex-col flex-1">
                     <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-neon transition-colors">
                       {product.title}
                     </h3>
@@ -157,7 +157,7 @@ export const ProductsSection = () => {
                       </div>
                     )}
 
-                    <div className="flex gap-2 sm:gap-3">
+                    <div className="flex gap-2 sm:gap-3 mt-auto">
                       <a href="/booking" className="btn-neon rounded-full px-3 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm text-primary-foreground font-semibold flex-1 flex items-center justify-center gap-1.5 whitespace-nowrap group/btn">
                         Book Now <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 flex-shrink-0" />
                       </a>
