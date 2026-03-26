@@ -68,24 +68,14 @@ export const ProductsSection = () => {
           <span className="mono text-xs uppercase tracking-[0.2em] text-primary">LINES</span>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-3xl md:text-4xl font-bold leading-[1.1]"
-          >
-            Available for <span className="text-neon">Booking</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.3 }}
-            className="text-muted-foreground max-w-md lg:text-right"
-          >
-            Two premium Isabel Brahma lines. Limited batch production ensures quality.
-          </motion.p>
-        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-20"
+        >
+          Available for <span className="text-neon">Booking</span>
+        </motion.h2>
 
         {/* Available products */}
         <div className="grid md:grid-cols-2 gap-8 mb-28">
