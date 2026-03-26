@@ -16,6 +16,7 @@ export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -37,7 +38,12 @@ export const Navigation = () => {
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <motion.a href="#home" whileHover={{ scale: 1.02 }} className="flex items-center gap-3">
-            <img src={logo} alt="Pure Brahma House" className="w-14 h-14 rounded-lg object-contain" />
+            <img
+              src={logo}
+              alt="Pure Brahma House"
+              className="w-14 h-14 rounded-lg object-contain cursor-pointer"
+              onClick={(e) => { e.preventDefault(); setShowLogo(true); }}
+            />
             <div className="hidden sm:block">
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
@@ -118,6 +124,30 @@ export const Navigation = () => {
             >
               Book Now
             </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Logo Lightbox */}
+      <AnimatePresence>
+        {showLogo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center cursor-pointer"
+            onClick={() => setShowLogo(false)}
+          >
+            <motion.img
+              src={logo}
+              alt="Pure Brahma House"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25 }}
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
           </motion.div>
         )}
       </AnimatePresence>
