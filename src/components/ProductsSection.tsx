@@ -102,7 +102,7 @@ export const ProductsSection = () => {
                   alt={product.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/40 to-transparent" />
                 
                 {/* Status */}
                 <div className="absolute top-6 left-6 flex items-center gap-2 glass rounded-full px-4 py-2">
