@@ -18,7 +18,7 @@ const available = [
   {
     title: 'Isabel Brahma Eggs',
     description: 'Fertile eggs collected from controlled Isabel Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
-    image: 'https://www.purebrahmahouse.com/images/fertile-eggs.png',
+    image: isabelBrahmaEggsImg,
   },
 ];
 
