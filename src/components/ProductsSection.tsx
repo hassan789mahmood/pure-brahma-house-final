@@ -8,6 +8,8 @@ import lightColumbianImg from '@/assets/light-columbian-brahma.png';
 import darkBrahmaImg from '@/assets/dark-brahma.png';
 import isabelBrahmaImg from '@/assets/isabel-brahma.jpg';
 import isabelBrahmaEggsImg from '@/assets/isabel-brahma-eggs.png';
+import lightColumbianChicksImg from '@/assets/light-columbian-chicks.jpg';
+import salmonBrahmaChicksImg from '@/assets/salmon-brahma-chicks.jpg';
 
 type Product = {
   title: string;
@@ -50,7 +52,7 @@ const products: Product[] = [
   {
     title: 'Light Columbian Brahma - One Week Old Chicks',
     description: 'Selectively bred Light Columbian Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: lightColumbianImg,
+    image: lightColumbianChicksImg,
     status: 'available',
     originalPrice: 3500,
     discountedPrice: 3000,
@@ -58,7 +60,7 @@ const products: Product[] = [
   {
     title: 'Light Columbian Brahma - Two Week Old Chicks',
     description: 'Selectively bred Light Columbian Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: lightColumbianImg,
+    image: lightColumbianChicksImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
@@ -76,7 +78,7 @@ const products: Product[] = [
   {
     title: 'Salmon Brahma - One Week Old Chicks',
     description: 'Selectively bred Salmon Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: lightColumbianImg,
+    image: salmonBrahmaChicksImg,
     status: 'available',
     originalPrice: 3500,
     discountedPrice: 3000,
@@ -84,7 +86,7 @@ const products: Product[] = [
   {
     title: 'Salmon Brahma - Two Week Old Chicks',
     description: 'Selectively bred Salmon Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: lightColumbianImg,
+    image: salmonBrahmaChicksImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
