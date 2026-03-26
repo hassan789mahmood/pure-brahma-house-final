@@ -122,7 +122,7 @@ export const ProductsSection = () => {
                   initial={{ opacity: 0, y: 60 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 + i * 0.1 }}
-                  className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex-[0_0_calc(50%-12px)] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_calc(50%-12px)]"
+                  className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex-[0_0_calc(50%-12px)] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_calc(50%-12px)] flex flex-col"
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/10] overflow-hidden">
