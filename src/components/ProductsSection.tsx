@@ -30,6 +30,14 @@ const products: Product[] = [
     discountedPrice: 3500,
   },
   {
+    title: 'Isabel Brahma - Two Week Old Chicks',
+    description: 'Selectively bred Isabel Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
+    image: 'https://www.purebrahmahouse.com/images/isabel-chicks.png',
+    status: 'available',
+    originalPrice: 4500,
+    discountedPrice: 4000,
+  },
+  {
     title: 'Isabel Brahma Eggs',
     description: 'Fertile eggs collected from controlled Isabel Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
     image: isabelBrahmaEggsImg,
