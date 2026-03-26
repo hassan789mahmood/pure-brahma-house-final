@@ -66,7 +66,7 @@ const products: Product[] = [
   {
     title: 'Light Columbian Brahma Eggs',
     description: 'Fertile eggs collected from controlled Light Columbian Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
-    image: lightColumbianImg,
+    image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
     discountedPrice: 800,
@@ -92,7 +92,7 @@ const products: Product[] = [
   {
     title: 'Salmon Brahma Eggs',
     description: 'Fertile eggs collected from controlled Salmon Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
-    image: lightColumbianImg,
+    image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
     discountedPrice: 800,
