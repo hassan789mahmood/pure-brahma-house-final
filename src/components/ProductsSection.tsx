@@ -196,6 +196,7 @@ export const ProductsSection = () => {
                       <img
                         src={product.image}
                         alt={product.title}
+                        loading="lazy"
                         className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${product.imgClass || ''}`}
                       />
                       {/* Status */}
@@ -281,7 +282,7 @@ export const ProductsSection = () => {
                     className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block h-full"
                   >
                     <div className="relative aspect-square overflow-hidden">
-                      <img src={item.image} alt={item.title} className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${item.imgClass || ''}`} />
+                      <img src={item.image} alt={item.title} loading="lazy" className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${item.imgClass || ''}`} />
                       <div className="absolute top-3 left-3">
                         <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
                       </div>

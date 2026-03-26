@@ -112,6 +112,7 @@ export const AboutSection = () => {
                 <img
                   src={aboutBrahma}
                   alt="Isabel Brahma"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
