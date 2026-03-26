@@ -18,11 +18,11 @@ const available = [
 ];
 
 const waitlist = [
-  { title: 'Light Columbian Brahma', desc: 'Striking white plumage with black hackle markings.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png' },
-  { title: 'Blue Columbian Brahma', desc: 'Rare variety with distinctive blue-laced feathering.', img: blueColumbianImg },
-  { title: 'BSO Brahma', desc: 'Premium BSO variety bred to standard expectations.', img: 'https://www.purebrahmahouse.com/images/farm-environment.png' },
-  { title: 'Dark Brahma', desc: 'Classic variety with bold, intricate feather patterning.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png' },
-  { title: 'Isabel Brahma', desc: 'Premium Isabel variety with refined golden-buff coloring.', img: '/images/isabel-brahma.jpg' },
+  { title: 'Light Columbian Brahma', desc: 'Striking white plumage with black hackle markings.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png', imgClass: '' },
+  { title: 'Blue Columbian Brahma', desc: 'Rare variety with distinctive blue-laced feathering.', img: blueColumbianImg, imgClass: 'scale-90' },
+  { title: 'BSO Brahma', desc: 'Premium BSO variety bred to standard expectations.', img: 'https://www.purebrahmahouse.com/images/farm-environment.png', imgClass: '' },
+  { title: 'Dark Brahma', desc: 'Classic variety with bold, intricate feather patterning.', img: 'https://www.purebrahmahouse.com/images/brahma-rooster.png', imgClass: '' },
+  { title: 'Isabel Brahma', desc: 'Premium Isabel variety with refined golden-buff coloring.', img: '/images/isabel-brahma.jpg', imgClass: '' },
 ];
 
 export const ProductsSection = () => {
@@ -155,7 +155,7 @@ export const ProductsSection = () => {
                   className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block flex-[0_0_calc(25%-15px)] min-w-0 max-sm:flex-[0_0_80%] max-lg:flex-[0_0_calc(50%-10px)]"
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500" />
+                    <img src={item.img} alt={item.title} className={`w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500 ${item.imgClass}`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                     <div className="absolute top-3 left-3">
                       <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
