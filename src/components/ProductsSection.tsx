@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import blueColumbianImg from '@/assets/blue-columbian-brahma.png';
 import bsoBrahmaImg from '@/assets/bso-brahma.png';
 import lightColumbianImg from '@/assets/light-columbian-brahma.png';
+import darkBrahmaImg from '@/assets/dark-brahma.png';
 
 const available = [
   {
