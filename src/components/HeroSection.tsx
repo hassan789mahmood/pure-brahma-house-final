@@ -180,7 +180,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="max-w-lg space-y-3 mx-0 my-[18px]"
+              className="max-w-lg space-y-3 mx-0 mt-10 mb-[18px]"
             >
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Premium Brahma Breeds</p>
               {/* <p className="text-base md:text-lg text-foreground leading-relaxed">
