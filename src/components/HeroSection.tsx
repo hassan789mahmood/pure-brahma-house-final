@@ -49,11 +49,8 @@ export const HeroSection = () => {
     }, 150);
   }, []);
 
-  // Smooth animation loop — only run on non-touch devices
-  const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-
+  // Smooth animation loop
   useEffect(() => {
-    if (isTouchDevice) return;
     let animId: number;
     const animate = () => {
       setSmoothPos((prev) => {
@@ -76,7 +73,7 @@ export const HeroSection = () => {
     };
     animId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animId);
-  }, [mousePos, driftAngle, isTouchDevice]);
+  }, [mousePos, driftAngle]);
 
   const bgX = smoothPos.x * 30;
   const bgY = smoothPos.y * 20;
