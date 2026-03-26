@@ -13,6 +13,7 @@ import salmonBrahmaChicksImg from '@/assets/salmon-brahma-chicks.jpg';
 import isabelChicks2weekImg from '@/assets/isabel-chicks-2week.jpg';
 import lightColumbianChicks2weekImg from '@/assets/light-columbian-chicks-2week.jpg';
 import salmonBrahmaChicks2weekImg from '@/assets/salmon-brahma-chicks-2week.jpg';
+import isabelChicks1weekImg from '@/assets/isabel-chicks-1week.jpg';
 
 type Product = {
   title: string;
@@ -29,7 +30,7 @@ const products: Product[] = [
   {
     title: 'Isabel Brahma - One Week Old Chicks',
     description: 'Selectively bred Isabel Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: isabelChicks2weekImg,
+    image: isabelChicks1weekImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
