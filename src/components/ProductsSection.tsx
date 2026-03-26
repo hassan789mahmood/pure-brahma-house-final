@@ -4,6 +4,7 @@ import { ArrowUpRight, ChevronLeft, ChevronRight, Clock, Radio } from 'lucide-re
 import useEmblaCarousel from 'embla-carousel-react';
 import blueColumbianImg from '@/assets/blue-columbian-brahma.png';
 import bsoBrahmaImg from '@/assets/bso-brahma.png';
+import lightColumbianImg from '@/assets/light-columbian-brahma.png';
 
 const available = [
   {
