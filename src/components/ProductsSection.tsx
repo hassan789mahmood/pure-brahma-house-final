@@ -10,6 +10,9 @@ import isabelBrahmaImg from '@/assets/isabel-brahma.jpg';
 import isabelBrahmaEggsImg from '@/assets/isabel-brahma-eggs.png';
 import lightColumbianChicksImg from '@/assets/light-columbian-chicks.jpg';
 import salmonBrahmaChicksImg from '@/assets/salmon-brahma-chicks.jpg';
+import isabelChicks2weekImg from '@/assets/isabel-chicks-2week.jpg';
+import lightColumbianChicks2weekImg from '@/assets/light-columbian-chicks-2week.jpg';
+import salmonBrahmaChicks2weekImg from '@/assets/salmon-brahma-chicks-2week.jpg';
 
 type Product = {
   title: string;
