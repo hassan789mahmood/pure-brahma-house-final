@@ -44,7 +44,7 @@ export const Navigation = () => {
               className="w-14 h-14 rounded-lg object-contain cursor-pointer"
               onClick={(e) => { e.preventDefault(); setShowLogo(true); }}
             />
-            <div className="hidden sm:block">
+            <div>
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
               </span>
