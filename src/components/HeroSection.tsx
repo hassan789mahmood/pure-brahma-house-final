@@ -49,19 +49,20 @@ export const HeroSection = () => {
     }, 150);
   }, []);
 
-  // Smooth animation loop: fast follow on mouse, slow drift without
+  // Smooth animation loop — only run on non-touch devices
+  const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
   useEffect(() => {
+    if (isTouchDevice) return;
     let animId: number;
     const animate = () => {
       setSmoothPos((prev) => {
         if (isMouseActive.current) {
-          // Fast lerp toward mouse
           return {
             x: prev.x + (mousePos.x - prev.x) * 0.12,
             y: prev.y + (mousePos.y - prev.y) * 0.12,
           };
         } else {
-          // Slow autonomous drift in a circle
           const driftX = Math.sin(driftAngle) * 0.15;
           const driftY = Math.cos(driftAngle * 0.7) * 0.1;
           return {
@@ -75,7 +76,7 @@ export const HeroSection = () => {
     };
     animId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animId);
-  }, [mousePos, driftAngle]);
+  }, [mousePos, driftAngle, isTouchDevice]);
 
   const bgX = smoothPos.x * 30;
   const bgY = smoothPos.y * 20;
