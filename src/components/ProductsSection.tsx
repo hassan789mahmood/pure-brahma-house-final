@@ -37,7 +37,7 @@ const products: Product[] = [
   {
     title: 'Isabel Brahma - Two Week Old Chicks',
     description: 'Selectively bred Isabel Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: 'https://www.purebrahmahouse.com/images/isabel-chicks.png',
+    image: isabelChicks2weekImg,
     status: 'available',
     originalPrice: 4500,
     discountedPrice: 4000,
@@ -63,7 +63,7 @@ const products: Product[] = [
   {
     title: 'Light Columbian Brahma - Two Week Old Chicks',
     description: 'Selectively bred Light Columbian Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: lightColumbianChicksImg,
+    image: lightColumbianChicks2weekImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
@@ -89,7 +89,7 @@ const products: Product[] = [
   {
     title: 'Salmon Brahma - Two Week Old Chicks',
     description: 'Selectively bred Salmon Brahma chicks with focused genetics, proper feather structure, and controlled early-stage care.',
-    image: salmonBrahmaChicksImg,
+    image: salmonBrahmaChicks2weekImg,
     status: 'available',
     originalPrice: 4000,
     discountedPrice: 3500,
