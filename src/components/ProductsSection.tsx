@@ -142,7 +142,7 @@ export const ProductsSection = () => {
                     <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-neon transition-colors">
                       {product.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 sm:mb-5 line-clamp-2">{product.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 sm:mb-5">{product.description}</p>
 
                     {/* Pricing */}
                     {product.originalPrice && product.discountedPrice && (
