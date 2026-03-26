@@ -27,23 +27,21 @@
   <body>
     <div id="app-loader" style="position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;background:#0d0e13">
       <div style="position:relative;width:80px;height:80px">
-        <!-- Logo that fades out and scales -->
-        <img src="/images/loader-logo-gold.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:12px;animation:logo-morph 2.4s ease-in-out infinite;z-index:2" />
-        <!-- Morph shapes underneath -->
-        <div style="position:absolute;inset:8px;opacity:0;animation:shapes-in 2.4s ease-in-out infinite">
-          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-0 1.8s ease-in-out infinite"></div>
-          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-1 2.1s ease-in-out infinite .15s"></div>
-          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-2 2.4s ease-in-out infinite .3s"></div>
-          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-3 2.7s ease-in-out infinite .45s"></div>
+        <img src="/images/loader-logo-gold.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:12px;animation:logo-morph 3.2s cubic-bezier(.4,0,.2,1) infinite;z-index:2" />
+        <div style="position:absolute;inset:20px;opacity:0;animation:shapes-in 3.2s cubic-bezier(.4,0,.2,1) infinite">
+          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-0 1.6s ease-in-out infinite"></div>
+          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-1 1.9s ease-in-out infinite .1s"></div>
+          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-2 2.2s ease-in-out infinite .2s"></div>
+          <div style="position:absolute;inset:0;opacity:.6;background:#eab308;animation:morph-3 2.5s ease-in-out infinite .3s"></div>
         </div>
       </div>
       <style>
-        @keyframes logo-morph{0%,15%{opacity:1;transform:scale(1);border-radius:12px}35%,65%{opacity:0;transform:scale(.3);border-radius:50%}85%,100%{opacity:1;transform:scale(1);border-radius:12px}}
-        @keyframes shapes-in{0%,15%{opacity:0;transform:scale(.3)}30%,70%{opacity:1;transform:scale(1)}85%,100%{opacity:0;transform:scale(.3)}}
-        @keyframes morph-0{0%,100%{transform:translate(0,0) scale(1);border-radius:0}25%{transform:translate(12px,-12px) scale(1.2);border-radius:50%}50%{transform:translate(24px,0) scale(.8);border-radius:25%}75%{transform:translate(12px,12px) scale(1.1);border-radius:75%}}
-        @keyframes morph-1{0%,100%{transform:translate(0,0) scale(1) rotate(0);border-radius:0}25%{transform:translate(-12px,-12px) scale(1.3) rotate(90deg);border-radius:50%}50%{transform:translate(-24px,0) scale(.7) rotate(180deg);border-radius:25%}75%{transform:translate(-12px,12px) scale(1.2) rotate(270deg);border-radius:75%}}
-        @keyframes morph-2{0%,100%{transform:translate(0,0) scale(1);border-radius:0}25%{transform:translate(-12px,12px) scale(.9);border-radius:100%}50%{transform:translate(0,24px) scale(1.4);border-radius:0}75%{transform:translate(12px,12px) scale(.8);border-radius:50%}}
-        @keyframes morph-3{0%,100%{transform:translate(0,0) scale(1) rotate(0);border-radius:0}25%{transform:translate(12px,12px) scale(1.1) rotate(-90deg);border-radius:25%}50%{transform:translate(0,-24px) scale(1.3) rotate(-180deg);border-radius:100%}75%{transform:translate(-12px,-12px) scale(.9) rotate(-270deg);border-radius:75%}}
+        @keyframes logo-morph{0%,25%{opacity:1;transform:scale(1)}40%{opacity:0;transform:scale(.6)}60%{opacity:0;transform:scale(.6)}75%,100%{opacity:1;transform:scale(1)}}
+        @keyframes shapes-in{0%,25%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1)}60%{opacity:1;transform:scale(1)}75%,100%{opacity:0;transform:scale(.4)}}
+        @keyframes morph-0{0%,100%{transform:translate(0,0) scale(1);border-radius:0}25%{transform:translate(6px,-6px) scale(1.2);border-radius:50%}50%{transform:translate(12px,0) scale(.8);border-radius:25%}75%{transform:translate(6px,6px) scale(1.1);border-radius:75%}}
+        @keyframes morph-1{0%,100%{transform:translate(0,0) scale(1) rotate(0);border-radius:0}25%{transform:translate(-6px,-6px) scale(1.3) rotate(90deg);border-radius:50%}50%{transform:translate(-12px,0) scale(.7) rotate(180deg);border-radius:25%}75%{transform:translate(-6px,6px) scale(1.2) rotate(270deg);border-radius:75%}}
+        @keyframes morph-2{0%,100%{transform:translate(0,0) scale(1);border-radius:0}25%{transform:translate(-6px,6px) scale(.9);border-radius:100%}50%{transform:translate(0,12px) scale(1.4);border-radius:0}75%{transform:translate(6px,6px) scale(.8);border-radius:50%}}
+        @keyframes morph-3{0%,100%{transform:translate(0,0) scale(1) rotate(0);border-radius:0}25%{transform:translate(6px,6px) scale(1.1) rotate(-90deg);border-radius:25%}50%{transform:translate(0,-12px) scale(1.3) rotate(-180deg);border-radius:100%}75%{transform:translate(-6px,-6px) scale(.9) rotate(-270deg);border-radius:75%}}
       </style>
     </div>
     <div id="root"></div>
