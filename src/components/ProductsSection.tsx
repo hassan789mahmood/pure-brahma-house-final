@@ -7,6 +7,7 @@ import bsoBrahmaImg from '@/assets/bso-brahma.png';
 import lightColumbianImg from '@/assets/light-columbian-brahma.png';
 import darkBrahmaImg from '@/assets/dark-brahma.png';
 import isabelBrahmaImg from '@/assets/isabel-brahma.jpg';
+import isabelBrahmaEggsImg from '@/assets/isabel-brahma-eggs.png';
 
 const available = [
   {
@@ -17,7 +18,7 @@ const available = [
   {
     title: 'Isabel Brahma Eggs',
     description: 'Fertile eggs collected from controlled Isabel Brahma breeding pairs. Ideal for breeders who prefer to hatch their own stock.',
-    image: 'https://www.purebrahmahouse.com/images/fertile-eggs.png',
+    image: isabelBrahmaEggsImg,
   },
 ];
 
