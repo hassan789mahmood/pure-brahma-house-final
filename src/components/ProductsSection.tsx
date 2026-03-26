@@ -157,7 +157,7 @@ export const ProductsSection = () => {
                   className="group glass rounded-2xl overflow-hidden border border-border/30 hover:border-primary/40 transition-all duration-500 hover-lift block flex-[0_0_calc(25%-15px)] min-w-0 max-sm:flex-[0_0_80%] max-lg:flex-[0_0_calc(50%-10px)]"
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    <img src={item.img} alt={item.title} className={`w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500 ${item.imgClass}`} />
+                    <img src={item.img} alt={item.title} className={`w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ${item.imgClass}`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                     <div className="absolute top-3 left-3">
                       <span className="mono text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded-full">Waitlist</span>
