@@ -181,14 +181,16 @@ export const ProductsSection = () => {
         {/* ── Available Products Carousel ── */}
         <div className="relative mb-28">
           <div className="overflow-hidden" ref={availRef}>
-            <div className="flex gap-6">
+            <div className="flex -ml-6">
               {available.map((product, i) => (
                 <motion.div
                   key={product.title}
                   initial={{ opacity: 0, y: 60 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.2 + i * 0.1 }}
-                  className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex-[0_0_calc(50%-12px)] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_calc(50%-12px)] flex flex-col"
+                  className="pl-6 flex-[0_0_50%] min-w-0 max-sm:flex-[0_0_85%] max-lg:flex-[0_0_50%]"
+                >
+                  <div className="group relative rounded-3xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover-lift gradient-border bg-card flex flex-col h-full"
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/10] overflow-hidden">
