@@ -7,6 +7,7 @@ import bsoBrahmaImg from '@/assets/bso-brahma.png';
 import lightColumbianImg from '@/assets/light-columbian-brahma.png';
 import darkBrahmaImg from '@/assets/dark-brahma.png';
 import isabelBrahmaImg from '@/assets/isabel-brahma.jpg';
+import isabelBrahmaEggsImg from '@/assets/isabel-brahma-eggs.png';
 
 const available = [
   {
