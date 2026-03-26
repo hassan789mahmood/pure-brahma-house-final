@@ -22,7 +22,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:justify-self-start">
             <a href="#home" className="inline-flex items-center gap-3 mb-6">
-              <img src={logo} alt="Pure Brahma House" className="w-10 h-10 rounded-lg object-contain" />
+              <img src={logo} alt="Pure Brahma House" className="w-14 h-14 rounded-lg object-contain" />
               <span className="font-display text-lg font-semibold tracking-tight">
                 Pure<span className="text-primary">Brahma</span>House
               </span>
