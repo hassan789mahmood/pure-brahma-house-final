@@ -41,7 +41,7 @@ export const Navigation = () => {
             <img
               src={logo}
               alt="Pure Brahma House"
-              className="w-14 h-14 rounded-lg object-contain cursor-pointer"
+              className="w-16 h-16 rounded-lg object-contain cursor-pointer"
               onClick={(e) => { e.preventDefault(); setShowLogo(true); }}
             />
             <div>
