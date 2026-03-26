@@ -75,7 +75,6 @@ const products: Product[] = [
     image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
-    discountedPrice: 800,
   },
 
   // ── Salmon Available ──
@@ -101,7 +100,6 @@ const products: Product[] = [
     image: isabelBrahmaEggsImg,
     status: 'available',
     originalPrice: 1200,
-    discountedPrice: 800,
   },
 
   // ── Waitlist ──
